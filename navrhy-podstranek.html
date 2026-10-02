@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="cs"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Návrhy vzhledu podstránek — Lukáš Pečenka</title>
+<style>
+:root{--accent:#8a4b24;--accent2:#b06a3a;--ink:#111820;--muted:#4a5156;--paper:#f5f0e8;--line:#e3d5c6;--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:#ece4d9;color:var(--ink);font-family:var(--sans)}
+.intro{max-width:1200px;margin:0 auto;padding:36px 24px 6px}
+.intro h1{font:400 34px/1.1 var(--serif);margin:0 0 8px}.intro p{margin:0;color:var(--muted);max-width:820px;line-height:1.55}
+.variant{max-width:1200px;margin:34px auto;padding:0 24px}
+.label{display:flex;gap:14px;align-items:baseline;margin-bottom:12px}.label b{font:400 30px var(--serif);color:var(--accent)}.label span{color:var(--muted)}
+.frame{background:#f7f2ea;border:1px solid #d5bfac;border-radius:6px;overflow:hidden;box-shadow:0 12px 30px rgba(45,30,18,.1)}
+.ph{background:repeating-linear-gradient(135deg,#e7d9c7 0 14px,#dfcfba 14px 28px);display:grid;place-items:center;color:#8a6a52;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:10px}
+.wrap{padding:56px 56px 64px}
+.kicker{font:700 12px var(--sans);letter-spacing:.16em;color:var(--accent);text-transform:uppercase}
+h2.big{font:400 40px/1.1 var(--serif);margin:10px 0 14px}
+.lead{font-size:17px;line-height:1.6;color:var(--muted);max-width:700px;margin:0}
+.ico{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- A: karty s ikonami ---------- */
+.vA .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:34px 0 40px;background:#fff;border:1px solid var(--line);border-radius:6px}
+.vA .stats div{padding:20px 24px;border-right:1px solid var(--line)}.vA .stats div:last-child{border:0}
+.vA .stats b{display:block;font:400 36px var(--serif);color:var(--accent)}.vA .stats span{color:var(--muted);font-size:14px}
+.vA .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.vA .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:24px 20px 22px;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s,border-color .3s;position:relative;overflow:hidden}
+.vA .card::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--accent);transition:width .35s ease}
+.vA .card:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(73,45,27,.14);border-color:#c9a88c}.vA .card:hover::after{width:100%}
+.vA .circle{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:var(--accent);background:conic-gradient(from 45deg,#fffdf9 0 25%,#f4ece1 25% 50%,#fffdf9 50% 75%,#f4ece1 75%);border:1px solid #decbbb;margin-bottom:16px;transition:background .3s,color .3s,transform .3s}
+.vA .card:hover .circle{background:linear-gradient(160deg,#a5683d,#73391a);color:#fff;transform:rotate(-8deg)}
+.vA .card h3{font:700 17px/1.25 var(--serif);margin:0 0 8px}.vA .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.vA .card.wide{grid-column:span 2;background:linear-gradient(160deg,#8a4b24,#5f3015);color:#fff;border:0}
+.vA .card.wide p{color:#f1e1d2}.vA .card.wide .circle{background:#fff;color:var(--accent)}
+.vA .tag{display:inline-block;margin-top:12px;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;background:#fff;color:var(--accent);padding:5px 9px;border-radius:3px}
+
+/* ---------- B: střídavé řádky s fotkou ---------- */
+.vB .row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:42px 0;border-bottom:1px solid var(--line)}
+.vB .row:last-child{border:0}
+.vB .row:nth-child(even) .ph{order:2}
+.vB .ph{aspect-ratio:4/3;border-radius:6px;box-shadow:0 18px 36px rgba(45,30,18,.12);transition:transform .5s ease}
+.vB .row:hover .ph{transform:scale(1.02)}
+.vB .num{font:400 64px/1 var(--serif);color:#d8bfa7}
+.vB h3{font:400 30px/1.15 var(--serif);margin:6px 0 12px}
+.vB p{margin:0 0 14px;color:var(--muted);font-size:16px;line-height:1.65}
+.vB ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.vB li{padding-left:28px;position:relative;font-size:15px}.vB li::before{content:"✓";position:absolute;left:0;top:-1px;width:20px;height:20px;border-radius:50%;background:#f1e2d2;color:var(--accent);display:grid;place-items:center;font-size:12px;font-weight:700}
+.vB .quote{margin:34px 0 0;padding:28px 34px;background:#fff;border-left:4px solid var(--accent);font:italic 22px/1.45 var(--serif);border-radius:0 6px 6px 0}
+.vB .quote small{display:block;margin-top:10px;font:700 12px var(--sans);letter-spacing:.12em;color:var(--accent);font-style:normal}
+
+/* ---------- C: interaktivní přepínač ---------- */
+.vC .tabs{display:grid;grid-template-columns:320px 1fr;gap:0;margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;min-height:420px}
+.vC .list{border-right:1px solid var(--line);background:#fbf8f3}
+.vC .list button{display:flex;gap:14px;align-items:center;width:100%;text-align:left;padding:18px 20px;border:0;border-bottom:1px solid var(--line);background:none;cursor:pointer;font:700 15px var(--sans);color:#2a2f33;transition:background .25s,color .25s,padding .25s}
+.vC .list button .n{font:400 22px var(--serif);color:#c9a88c;min-width:28px}
+.vC .list button:hover{background:#f3e8dc;padding-left:26px}
+.vC .list button.on{background:var(--accent);color:#fff}.vC .list button.on .n{color:#f1d3b8}
+.vC .panel{padding:34px 40px;display:grid;grid-template-columns:1fr 260px;gap:34px;align-items:start;animation:fade .45s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.vC .panel h3{font:400 30px/1.15 var(--serif);margin:0 0 12px}.vC .panel p{color:var(--muted);line-height:1.65;font-size:16px;margin:0 0 16px}
+.vC .chips{display:flex;flex-wrap:wrap;gap:8px}.vC .chips span{font:700 12px var(--sans);background:#f1e2d2;color:var(--accent);padding:7px 10px;border-radius:3px}
+.vC .panel .ph{aspect-ratio:3/4;border-radius:6px}
+.note{color:var(--muted);font-size:13px;margin:10px 0 0}
+</style></head><body>
+<div class="intro">
+  <h1>Návrhy vzhledu podstránek</h1>
+  <p>Všechny tři varianty ukazují skutečný obsah stránky <b>Diagnostika</b>. Najeďte myší na prvky – všude jsou animace. Šrafované plochy jsou místa pro fotky (doplníme na konci). Vybraný styl pak použiji na všechny stránky v menu.</p>
+</div>
+
+<section class="variant vA">
+  <div class="label"><b>A</b><span>Karty s ikonami – přehledná mřížka, čísla nahoře, zvýrazněná hlavní metoda, karty „ožijí“ při najetí</span></div>
+  <div class="frame"><div class="wrap">
+    <div class="kicker">Diagnostické metody</div><h2 class="big">Každá metoda odpoví na jinou otázku</h2>
+    <p class="lead">Teprve jejich kombinace dá úplný obraz o stavu stavby.</p>
+    <div class="stats"><div><b>9</b><span>diagnostických metod</span></div><div><b>80 cm</b><span>hloubka měření bez vrtání</span></div><div><b>20+</b><span>stran písemné zprávy</span></div></div>
+    <div class="grid">
+      <div class="card wide"><div class="circle"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12h3l2-6 4 12 2-6h7"/></svg></div><h3>Měření MOIST 350 I – bez vrtání</h3><p>Mikrovlnný sken ukáže vlhkost až 80 cm hluboko ve zdi. Výsledek – mapu vlhkosti – vidíte přímo na místě.</p><span class="tag">Jako jeden z mála v ČR</span></div>
+      <div class="card"><div class="circle"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></div><h3>Vizuální obhlídka</h3><p>Terén, svody, kanalizace, sklepy i fasáda.</p></div>
+      <div class="card"><div class="circle"><svg class="ico" viewBox="0 0 24 24"><path d="M4 20 14 10M14 10l3-6 3 3-6 3"/></svg></div><h3>Akustická obhlídka</h3><p>Poklep odhalí duté a uvolněné omítky.</p></div>
+      <div class="card"><div class="circle"><svg class="ico" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L5 19a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-10V3"/></svg></div><h3>Odběr vzorků</h3><p>Vlhkost a soli – dusičnany, chloridy, sírany.</p></div>
+      <div class="card"><div class="circle"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3v12M8 15a4 4 0 1 0 8 0"/></svg></div><h3>Termokamera</h3><p>Tepelné mosty a místa s rizikem plísní.</p></div>
+      <div class="card"><div class="circle"><svg class="ico" viewBox="0 0 24 24"><circle cx="6" cy="18" r="3"/><path d="M8 16 20 4"/></svg></div><h3>Endoskop</h3><p>Pohled do dutin bez bourání.</p></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="variant vB">
+  <div class="label"><b>B</b><span>Střídavé řádky s fotkou – jako časopis, hodně vzduchu, fotka střídavě vlevo a vpravo, citát pro důvěryhodnost</span></div>
+  <div class="frame"><div class="wrap">
+    <div class="kicker">Diagnostické metody</div><h2 class="big">Každá metoda odpoví na jinou otázku</h2>
+    <div class="rows">
+      <div class="row"><div class="ph">Fotka: měření skenerem MOIST na zdi</div><div><div class="num">01</div><h3>Měření MOIST 350 I – bez vrtání</h3><p>Mikrovlnný sken ukáže vlhkost až 80 cm hluboko ve zdi. Výsledek vidíte přímo na místě.</p><ul><li>žádné díry, žádné poškození omítek</li><li>výsledek nezkresluje zasolení</li><li>ideální pro památky a koupi domu</li></ul></div></div>
+      <div class="row"><div class="ph">Fotka: odběr vzorku ze zdiva</div><div><div class="num">02</div><h3>Odběr vzorků a rozbor</h3><p>Ze vzorků zdiva a omítek zjistím skutečnou vlhkost konstrukce a obsah solí. Stupeň zasolení vyhodnocuji podle směrnice WTA.</p><ul><li>objemová vlhkost zdiva</li><li>dusičnany, chloridy, sírany</li></ul></div></div>
+    </div>
+    <div class="quote">„Z vlastní zkušenosti mohu říci, že se dá řešit takřka vše – je to otázka správně zvolených metod.“<small>LUKÁŠ PEČENKA</small></div>
+  </div></div>
+</section>
+
+<section class="variant vC">
+  <div class="label"><b>C</b><span>Interaktivní přepínač – vlevo seznam, vpravo detail; méně textu najednou, návštěvník si kliká, co ho zajímá</span></div>
+  <div class="frame"><div class="wrap">
+    <div class="kicker">Diagnostické metody</div><h2 class="big">Vyberte metodu</h2>
+    <div class="tabs">
+      <div class="list">
+        <button class="on" data-i="0"><span class="n">01</span>Měření MOIST 350 I</button>
+        <button data-i="1"><span class="n">02</span>Vizuální obhlídka</button>
+        <button data-i="2"><span class="n">03</span>Odběr vzorků a rozbor</button>
+        <button data-i="3"><span class="n">04</span>Termokamera</button>
+        <button data-i="4"><span class="n">05</span>Kamerová zkouška kanalizace</button>
+      </div>
+      <div class="panel" id="panelC"></div>
+    </div>
+    <p class="note">Klikněte vlevo na jinou metodu.</p>
+  </div></div>
+</section>
+
+<script>
+const D=[
+ ['Měření MOIST 350 I – bez vrtání','Mikrovlnný sken ukáže vlhkost až 80 cm hluboko ve zdi a výsledek – mapu vlhkosti – vidíte přímo na místě. Na rozdíl od odporových vlhkoměrů ho nezkresluje zasolení.',['bez poškození omítek','80 cm do hloubky','výsledek na místě'],'Fotka: skener MOIST'],
+ ['Vizuální obhlídka stavby','Prohlídka objektu i okolí: terén kolem domu, dešťové svody, napojení kanalizace a septiků, sklepy a fasáda. Už tady se často ukáže, odkud voda přichází.',['terén a svody','kanalizace','sklepy a fasáda'],'Fotka: obhlídka fasády'],
+ ['Odběr vzorků a rozbor','Ze vzorků zdiva a omítek zjistím skutečnou vlhkost konstrukce a obsah solí – dusičnanů, chloridů a síranů. Stupeň zasolení vyhodnocuji podle směrnice WTA.',['objemová vlhkost','zasolení','směrnice WTA'],'Fotka: odběr vzorku'],
+ ['Měření termokamerou','Termokamera ukáže tepelné mosty, ochlazované povrchy a místa, kde hrozí kondenzace vody a vznik plísní.',['tepelné mosty','kondenzace','riziko plísní'],'Fotka: termosnímek'],
+ ['Kamerová zkouška kanalizace','Inspekční kamera projede kanalizaci a potrubí a přesně ukáže prasklinu, netěsnost nebo ucpání – častou skrytou příčinu vlhkosti.',['HD záznam','vzdálenost k závadě','skryté úniky'],'Fotka: kamera v potrubí']];
+const panel=document.getElementById('panelC');
+function show(i){const d=D[i];panel.innerHTML=`<div><h3>${d[0]}</h3><p>${d[1]}</p><div class="chips">${d[2].map(c=>`<span>${c}</span>`).join('')}</div></div><div class="ph">${d[3]}</div>`;panel.style.animation='none';panel.offsetHeight;panel.style.animation='';
+ document.querySelectorAll('.vC .list button').forEach(b=>b.classList.toggle('on',+b.dataset.i===i));}
+document.querySelectorAll('.vC .list button').forEach(b=>b.addEventListener('click',()=>show(+b.dataset.i)));show(0);
+</script>
+</body></html>
