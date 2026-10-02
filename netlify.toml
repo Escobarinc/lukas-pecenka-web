@@ -1,0 +1,29 @@
+# Nastavení pro Netlify (náhled pro klienta)
+# Web je zatím pracovní verze – skrytý před vyhledávači, bez správy webu.
+# Při ostrém spuštění na lukaspecenka.cz řádek s X-Robots-Tag smazat.
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[redirects]]
+  from = "/admin.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/navrhy-menu.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/server.py"
+  to = "/"
+  status = 301
+  force = true

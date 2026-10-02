@@ -8,6 +8,7 @@
     ['ukazka','ukazka-pruzkumu.html','Ukázka průzkumu'],
     ['reference','reference.html','Reference'],
     ['omne','o-mne.html','O mně'],
+    ['rady','pomoc-a-rady.html','Pomoc a rady'],
     ['otazky','otazky-a-odpovedi.html','Otázky a odpovědi'],
     ['kontakt','kontakt.html','Kontakt']
   ];

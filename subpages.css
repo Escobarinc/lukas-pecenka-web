@@ -68,3 +68,61 @@ html[data-theme="dark"] .subpage main{background:#9a7b58;color:#17120d}html[data
 .faq-answer a{color:#8a4b24}
 html[data-theme="dark"] .faq-item{background:rgba(255,255,255,.55)}
 @media (max-width:700px){.faq-item summary{font-size:16px;padding:16px 52px 16px 16px}.faq-answer{padding:0 16px 16px}}
+
+/* Úvod podstránek s bannerem (fotka se doplní do assets/bannery/<klíč>.jpg) */
+.page-hero--banner .page-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center}
+.page-hero--banner .page-hero-copy{min-width:0}
+.page-banner{position:relative;margin:0;aspect-ratio:16/11;border-radius:6px;overflow:hidden;border:1px solid #d5bfac;background:repeating-linear-gradient(135deg,#efe5d8 0 14px,#e9dccb 14px 28px);box-shadow:0 18px 40px rgba(45,30,18,.14)}
+.page-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.page-banner figcaption{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80%;text-align:center;color:#8a6a52;font:700 12px/1.5 Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.page-hero--banner::after,.page-hero--banner .container::after{display:none}
+@media (max-width:900px){.page-hero--banner .page-hero-grid{grid-template-columns:1fr;gap:26px}.page-banner{aspect-ratio:16/9}}
+
+/* Pomoc a rady – rozcestník */
+.rada-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rada-card{display:flex;flex-direction:column;gap:10px;padding:24px 24px 22px;background:rgba(255,255,255,.8);border:1px solid #d5bfac;border-radius:6px;box-shadow:0 5px 14px rgba(73,45,27,.045);text-decoration:none;color:inherit;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.rada-card:hover{transform:translateY(-4px);border-color:#b98f73;box-shadow:0 16px 30px rgba(73,45,27,.12)}
+.rada-card-meta{font:700 11px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8a4b24}
+.rada-card h3{margin:0;font:400 21px/1.2 Georgia,"Times New Roman",serif;color:#111820}
+.rada-card p{margin:0;color:#4a5156;font-size:14.5px;line-height:1.55;flex:1}
+.rada-card-more{font:700 13px Arial,sans-serif;color:#8a4b24}
+.rada-card:hover .rada-card-more{text-decoration:underline}
+@media (max-width:1000px){.rada-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.rada-grid{grid-template-columns:1fr}}
+
+/* Pomoc a rady – článek */
+.rada-breadcrumb{font:700 12px Arial,sans-serif;color:#7a6a5d;margin-bottom:14px}
+.rada-breadcrumb a{color:#8a4b24;text-decoration:none}
+.rada-page .page-hero h1{font-size:clamp(34px,3.6vw,50px);line-height:1.05}
+.rada-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start}
+.rada-text{max-width:760px;font:16.5px/1.75 Arial,Helvetica,sans-serif;color:#2b2f33}
+.rada-text h2{font:400 30px/1.2 Georgia,"Times New Roman",serif;color:#111820;margin:42px 0 14px}
+.rada-text h3{font:700 19px/1.35 Georgia,"Times New Roman",serif;color:#111820;margin:30px 0 10px}
+.rada-text h2:first-child,.rada-text h3:first-child{margin-top:0}
+.rada-text p{margin:0 0 16px}
+.rada-text ul{margin:6px 0 22px;padding:0;list-style:none;display:grid;gap:10px}
+.rada-text li{position:relative;padding:12px 16px 12px 44px;background:rgba(255,255,255,.7);border:1px solid #e6d9cc;border-radius:6px}
+.rada-text li::before{content:"";position:absolute;left:17px;top:21px;width:10px;height:10px;border-radius:50%;background:#8a4b24;box-shadow:0 0 0 4px #f1e2d2}
+.rada-text strong{color:#111820}
+.rada-table{overflow-x:auto;margin:10px 0 26px;border:1px solid #d5bfac;border-radius:6px}
+.rada-table table{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.45;background:#fff}
+.rada-table th{background:#8a4b24;color:#fff;text-align:left;padding:11px 14px;font-weight:700}
+.rada-table td{padding:11px 14px;border-top:1px solid #eadfd3;vertical-align:top}
+.rada-table tr:nth-child(even) td{background:#faf6f0}
+.rada-aside{position:sticky;top:24px}
+.rada-cta{padding:24px;border-radius:6px;background:linear-gradient(160deg,#8a4b24,#5f3015);color:#fff;box-shadow:0 18px 36px rgba(95,48,21,.25)}
+.rada-cta strong{display:block;font:400 22px/1.2 Georgia,serif;margin-bottom:10px}
+.rada-cta p{margin:0 0 18px;color:#f3e4d6;font-size:14.5px;line-height:1.55}
+.rada-cta .btn{width:100%;justify-content:center;background:#fff;color:#5f3015;border-color:#fff}
+.rada-cta-link{display:block;margin-top:12px;color:#f3e4d6;font:700 13px Arial,sans-serif;text-decoration:none;text-align:center}
+.rada-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rada-mini{display:block;padding:18px 20px;background:#fff;border:1px solid #d5bfac;border-radius:6px;text-decoration:none;color:inherit;transition:transform .2s ease,border-color .2s ease}
+.rada-mini:hover{transform:translateY(-3px);border-color:#b98f73}
+.rada-mini span{display:block;font:700 11px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8a4b24;margin-bottom:6px}
+.rada-mini strong{font:400 18px/1.25 Georgia,serif}
+@media (max-width:1000px){.rada-layout{grid-template-columns:1fr;gap:30px}.rada-aside{position:static}.rada-mini-grid{grid-template-columns:1fr}}
+html[data-theme="dark"] .rada-card,html[data-theme="dark"] .rada-mini,html[data-theme="dark"] .rada-text li{background:rgba(255,255,255,.55)}
+
+.rada-text{min-width:0}
+@media (max-width:1000px){.rada-layout{grid-template-columns:minmax(0,1fr)}}
+.rada-table table{min-width:560px}
