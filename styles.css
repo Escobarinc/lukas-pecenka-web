@@ -242,3 +242,80 @@ html[data-theme="dark"] .header-inner .desktop-nav a[aria-current="page"]{backgr
 .header-inner .desktop-nav a{padding:10px 8px}
 .header-cta{padding:0 16px;font-size:14px;flex:0 0 auto}
 }
+
+/* Hero – popisky přes fotku (texty jsou v index.html, ne ve fotce) */
+.hero-labels{pointer-events:none}
+.hero-labels text{fill:#fff;font-family:Arial,Helvetica,sans-serif;paint-order:stroke;stroke:rgba(0,0,0,.35);stroke-width:3px}
+.hl-tag circle{fill:none;stroke:#fff;stroke-width:3;opacity:.9}.hl-tag .hl-dot{fill:#fff}
+.hl-tag polyline{fill:none;stroke:#fff;stroke-width:2.5}
+.hl-cap{font-weight:700;font-size:30px;letter-spacing:3px}
+.hl-big{font-weight:700;font-size:60px}
+.hl-lines text{font-weight:700;font-size:28px;letter-spacing:4px}
+.hl-quote text{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:48px}
+.hl-quote .hl-name{font-family:Arial,sans-serif;font-style:normal;font-weight:700;font-size:24px;letter-spacing:4px}
+@media (max-width:700px){.hero-labels{display:none}}
+/* Panel přes fotku skeneru (texty v index.html) */
+.scanner-panel{pointer-events:none}
+.scanner-panel rect{fill:rgba(250,246,240,.92);stroke:rgba(185,143,115,.4);stroke-width:2}
+.scanner-panel .sp-ico path,.scanner-panel .sp-ico circle{fill:none;stroke:#8a4b24;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+.scanner-panel text{font-family:Georgia,"Times New Roman",serif;font-size:40px;fill:#1b2228}
+@media (max-width:700px){.scanner-panel{display:none}}
+
+/* ===== Reference průzkumů: přehled na úvodní stránce, mapa a vybrané průzkumy ===== */
+#ref-prehled{padding:64px 0;background:#f7f1e8;border-top:1px solid #e6d9cc}
+.ref-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:28px}
+.ref-head h2{font:400 clamp(32px,3.2vw,44px)/1.08 Georgia,serif;margin:8px 0 0}
+.ref-head p{margin:0;max-width:440px;color:#4a5156;font-size:15px;line-height:1.6}
+.ref-featured{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ref-featured--home{grid-template-columns:repeat(4,1fr)}
+.ref-card{background:#fff;border:1px solid #e3d5c6;border-radius:6px;padding:20px 22px;box-shadow:0 6px 16px rgba(73,45,27,.05);transition:transform .3s,box-shadow .3s,border-color .3s}
+.ref-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(73,45,27,.12);border-color:#c9a88c}
+.ref-card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ref-card-top svg{width:30px;height:30px;padding:5px;border-radius:50%;background:#f1e2d2;fill:none;stroke:#8a4b24;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ref-card-top span{font:700 11px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8a4b24}
+.ref-card h3{margin:0 0 3px;font:400 20px/1.2 Georgia,serif;color:#111820}
+.ref-misto{margin:0 0 10px!important;color:#6b5d51!important;font:700 13px Arial,sans-serif!important}
+.ref-card p{margin:0;color:#4a5156;font-size:14px;line-height:1.55}
+.ref-more{grid-column:span 2;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:26px 30px;border-radius:6px;color:#fff;background:linear-gradient(120deg,#8a4b24,#4f2810);box-shadow:0 14px 30px rgba(79,40,16,.25);transition:transform .3s,box-shadow .3s}
+.ref-more:hover{transform:translateY(-4px);box-shadow:0 20px 38px rgba(79,40,16,.32)}
+.ref-more-num{font:400 64px/1 Georgia,serif}
+.ref-more-txt{font-size:16px;line-height:1.45;color:#f1dfcf;max-width:380px}
+.ref-more-link{margin-top:6px;font:700 13px Arial,sans-serif;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.ref-more-link i{font-style:normal;transition:transform .2s}.ref-more:hover .ref-more-link i{transform:translateX(5px)}
+.ref-map-grid{display:grid;grid-template-columns:1fr 280px;gap:36px;align-items:center;margin-bottom:44px}
+.ref-map{position:relative;aspect-ratio:5342/3123}
+.ref-map-cz{position:absolute;inset:0;width:100%;height:100%;opacity:.85}
+.ref-dot{position:absolute;transform:translate(-50%,-50%);border-radius:50%;border:2px solid #fff;background:rgba(138,75,36,.78);box-shadow:0 2px 6px rgba(60,30,10,.3);padding:0;cursor:pointer;transition:transform .2s,background .2s;z-index:1}
+.ref-dot:hover,.ref-dot:focus-visible{transform:translate(-50%,-50%) scale(1.35);background:#5f3015;z-index:3;outline:none}
+.ref-tip{position:absolute;z-index:5;transform:translate(-50%,calc(-100% - 12px));background:#111820;color:#fff;border-radius:6px;padding:9px 13px;pointer-events:none;white-space:nowrap;box-shadow:0 10px 24px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:2px}
+.ref-tip.dole{transform:translate(-50%,24px)}
+.ref-tip strong{font:400 16px Georgia,serif}.ref-tip span{font:700 12px Arial;color:#f1c9a6}.ref-tip small{font:11px Arial;color:#c9c2ba}
+.ref-tip[hidden]{display:none}
+.ref-stats{display:flex;flex-direction:column;gap:18px}
+.ref-big b{display:block;font:400 54px/1 Georgia,serif;color:#8a4b24}.ref-big span{font:700 12px Arial;letter-spacing:.1em;text-transform:uppercase;color:#4a5156}
+.ref-years{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;border-top:1px solid #e3d5c6;padding-top:14px}
+.ref-years div{text-align:center}.ref-years b{display:block;font:400 22px Georgia,serif}.ref-years span{font:12px Arial;color:#6b5d51}
+.ref-note{margin:0;font-size:12.5px;color:#6b5d51;line-height:1.5}
+.ref-sub{font:400 28px Georgia,serif;margin:0 0 18px}
+@media (max-width:1000px){.ref-featured,.ref-featured--home{grid-template-columns:repeat(2,1fr)}.ref-map-grid{grid-template-columns:1fr}.ref-stats{flex-direction:row;flex-wrap:wrap}}
+@media (max-width:700px){#ref-prehled{padding:44px 0}.ref-head{flex-direction:column;align-items:flex-start;gap:10px}.ref-featured,.ref-featured--home{grid-template-columns:1fr}.ref-more{grid-column:auto}.ref-dot{border-width:1px}}
+/* Nové logo LP (obrys šestiúhelníku) – bez ořezu, ve správném poměru */
+.brand-logo{clip-path:none!important;object-fit:contain!important}
+.brand-logo-frame{width:48px!important;height:55px!important;flex:0 0 48px!important}
+/* Hlavička 2. 10.: bez tlačítka Objednat průzkum, přepínač režimu úplně vpravo, menu větší a rozevřenější */
+.header-cta{display:none!important}
+@media (min-width:1181px){
+  .header-inner .desktop-nav{gap:2px;font-size:14.5px;justify-content:space-evenly}
+  .header-inner .desktop-nav a{padding:10px 9px}
+  .header-inner .theme-toggle{margin-left:auto;flex:0 0 auto}
+  .header-inner .desktop-nav{min-width:0}
+}
+
+/* ===== APPLE PÍSMO NA CELÉM WEBU (2. 10. 2026) =====
+   Původní stav: nadpisy Georgia ("Times New Roman", serif), text Arial (Helvetica, sans-serif).
+   NÁVRAT: smazat celý tento blok až po značku KONEC APPLE PÍSMA. */
+:root{--font-apple:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+body,body *:not(.signature){font-family:var(--font-apple)!important}
+h1,h2,h3,.brand-copy strong{font-weight:600!important;letter-spacing:-.01em}
+.hero-labels text{font-family:var(--font-apple)!important}
+/* KONEC APPLE PÍSMA */
