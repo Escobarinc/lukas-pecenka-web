@@ -126,3 +126,77 @@ html[data-theme="dark"] .rada-card,html[data-theme="dark"] .rada-mini,html[data-
 .rada-text{min-width:0}
 @media (max-width:1000px){.rada-layout{grid-template-columns:minmax(0,1fr)}}
 .rada-table table{min-width:560px}
+
+/* ===== Pomoc a rady – magazínový styl (2. 10.) ===== */
+.mg-photo{position:relative;overflow:hidden;background:repeating-linear-gradient(135deg,#e7d9c7 0 14px,#dfcfba 14px 28px)}
+.mg-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;transition:transform .6s ease}
+.mg-photo span{position:absolute;inset:0;display:grid;place-items:center;padding:14px;text-align:center;color:#8a6a52;font:700 10.5px/1.4 Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase}
+/* úvod s koláží */
+.mg-hero{position:relative;overflow:hidden;padding:56px 0 64px;background:radial-gradient(circle at 78% 30%,#efe2d1 0,#f6efe5 45%,#f8f3ec 100%)}
+.mg-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:40px;align-items:center}
+.mg-hero h1{font:400 clamp(42px,4.6vw,64px)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.03em;margin:10px 0 18px}
+.mg-collage{position:relative;height:430px}
+.mg-collage .mg-photo{position:absolute;border-radius:6px;border:6px solid #fff;box-shadow:0 22px 44px rgba(45,30,18,.22);transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.mg-collage .c1{left:0;top:30px;width:58%;height:330px;transform:rotate(-3deg);z-index:1}
+.mg-collage .c2{right:4%;top:0;width:46%;height:230px;transform:rotate(4deg);z-index:2}
+.mg-collage .c3{right:12%;bottom:0;width:44%;height:200px;transform:rotate(-2deg);z-index:3}
+.mg-collage:hover .c1{transform:rotate(-5deg) translate(-8px,4px)}
+.mg-collage:hover .c2{transform:rotate(6deg) translate(8px,-6px)}
+.mg-collage:hover .c3{transform:rotate(0deg) translate(4px,6px)}
+.mg-badge{position:absolute;right:0;top:44%;z-index:4;display:flex;gap:14px;align-items:center;max-width:250px;padding:16px 18px;border-radius:6px;background:linear-gradient(160deg,#8a4b24,#5f3015);color:#fff;text-decoration:none;font:700 13px/1.4 Arial,sans-serif;box-shadow:0 16px 34px rgba(95,48,21,.35);transition:transform .25s}
+.mg-badge i{flex:0 0 34px;height:34px;border-radius:50%;background:#fff;color:#5f3015;display:grid;place-items:center;font-style:normal;transition:transform .25s}
+.mg-badge:hover{transform:translateY(-3px)}.mg-badge:hover i{transform:translateX(3px)}
+/* tmavý pás s tématy */
+.mg-topics{background:linear-gradient(90deg,#2a1d14,#3d2a1c 50%,#2a1d14);border-top:1px solid #5b4330}
+.mg-topics .container{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:14px 0}
+.mg-topics button{border:1px solid transparent;background:none;color:#ead9c6;font:700 13px Arial,sans-serif;padding:9px 16px;border-radius:30px;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.mg-topics button:hover{border-color:#a07a5c;color:#fff}
+.mg-topics button.on{background:#f1e2d2;color:#5f3015}
+/* mozaika */
+.mg-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px}
+.mg-head h2{font:400 40px/1.1 Georgia,serif;margin:0}.mg-head p{margin:0;color:#6b5d51;font-size:14px}
+.mg-card{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid #e3d5c6;border-radius:6px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 6px 16px rgba(73,45,27,.05);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s,border-color .3s}
+.mg-card:hover{transform:translateY(-6px);box-shadow:0 20px 38px rgba(73,45,27,.15);border-color:#c9a88c}
+.mg-card:hover .mg-photo img{transform:scale(1.06)}
+.mg-card::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:#8a4b24;transition:width .4s ease}
+.mg-card:hover::after{width:100%}
+.mg-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.mg-meta{font:700 11px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8a4b24}
+.mg-card h3{margin:0;font:400 19px/1.22 Georgia,serif;color:#111820}
+.mg-card p{margin:0;color:#4a5156;font-size:14.5px;line-height:1.55}
+.mg-more{margin-top:auto;padding-top:6px;font:700 13px Arial,sans-serif;color:#8a4b24}
+.mg-more i{display:inline-block;font-style:normal;transition:transform .25s}.mg-card:hover .mg-more i{transform:translateX(5px)}
+.mg-top{display:grid;grid-template-columns:1.35fr 1fr;gap:22px;margin-bottom:22px}
+.mg-velka .mg-photo{aspect-ratio:16/10}.mg-velka h3{font-size:32px;line-height:1.12}.mg-velka .mg-body{padding:24px 28px 26px}.mg-velka p{font-size:15.5px}
+.mg-side{display:grid;grid-template-rows:1fr 1fr;gap:22px}
+.mg-bok{flex-direction:row}.mg-bok .mg-photo{flex:0 0 42%}.mg-bok h3{font-size:21px}
+.mg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.mg-grid .mg-card:nth-child(-n+3){grid-column:span 1}
+.mg-mala .mg-photo{aspect-ratio:4/3}.mg-mala h3{font-size:17.5px}
+.mg-list.mg-filtered .mg-top,.mg-list.mg-filtered .mg-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.mg-list.mg-filtered .mg-side{display:contents}
+.mg-list.mg-filtered .mg-card{flex-direction:column}.mg-list.mg-filtered .mg-photo{flex:none;aspect-ratio:4/3}
+.mg-list.mg-filtered .mg-velka h3{font-size:19px}
+.mg-card[hidden]{display:none!important}
+.mg-empty{color:#6b5d51;text-align:center;padding:30px 0}
+/* výzva */
+.mg-cta{background:linear-gradient(120deg,#8a4b24,#4f2810);color:#fff;padding:46px 0}
+.mg-cta .container{display:flex;justify-content:space-between;align-items:center;gap:30px}
+.mg-cta h2{font:400 34px/1.15 Georgia,serif;margin:0 0 8px}.mg-cta p{margin:0;color:#f1dfcf}
+.mg-cta-btns{display:flex;gap:12px;flex-wrap:wrap}
+.mg-cta .btn-primary{background:#fff;color:#5f3015;border-color:#fff}
+.mg-cta .btn-outline{background:transparent;color:#fff;border-color:#e2c2a6}
+/* tablet a mobil */
+@media (max-width:1100px){.mg-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:900px){.mg-hero-grid{grid-template-columns:1fr}.mg-collage{height:340px;margin-top:10px}.mg-top{grid-template-columns:1fr}.mg-grid,.mg-list.mg-filtered .mg-top,.mg-list.mg-filtered .mg-grid{grid-template-columns:1fr 1fr}.mg-cta .container{flex-direction:column;align-items:flex-start}}
+@media (max-width:600px){.mg-hero{padding:34px 0 40px}.mg-collage{height:280px}.mg-collage .c1{height:220px}.mg-collage .c2{height:150px}.mg-collage .c3{height:130px}.mg-badge{max-width:200px;top:auto;bottom:-6px;right:0}
+.mg-grid,.mg-list.mg-filtered .mg-top,.mg-list.mg-filtered .mg-grid{grid-template-columns:1fr}.mg-bok{flex-direction:column}.mg-bok .mg-photo{flex:none;aspect-ratio:16/10}.mg-velka h3{font-size:25px}
+.mg-topics .container{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:12px 16px}.mg-topics button{flex:0 0 auto}.mg-head{flex-direction:column;gap:4px}}
+html[data-theme="dark"] .mg-card{background:rgba(255,255,255,.6)}
+/* rytmus mozaiky: 3 – 4 – 3 */
+@media (min-width:1101px){
+.mg-list:not(.mg-filtered) .mg-grid{grid-template-columns:repeat(12,1fr)}
+.mg-list:not(.mg-filtered) .mg-grid .mg-card{grid-column:span 4}
+.mg-list:not(.mg-filtered) .mg-grid .mg-card:nth-child(n+4):nth-child(-n+7){grid-column:span 3}
+.mg-list:not(.mg-filtered) .mg-grid .mg-card:nth-child(-n+3) .mg-photo,.mg-list:not(.mg-filtered) .mg-grid .mg-card:nth-child(n+8) .mg-photo{aspect-ratio:16/10}
+}
