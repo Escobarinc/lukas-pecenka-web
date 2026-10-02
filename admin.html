@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="Přihlášení do správy webu Lukáše Pečenky.">
+  <title>Správa webu — Lukáš Pečenka</title>
+  <link rel="stylesheet" href="admin.css?v=41">
+</head>
+<body>
+  <main class="admin-login-shell">
+    <section class="admin-login-card" aria-labelledby="admin-title">
+      <a class="admin-brand" href="index.html" aria-label="Zpět na web Lukáše Pečenky">
+        <span class="admin-logo"><img src="assets/logo-light-source.png" alt=""></span>
+        <span><strong>Lukáš Pečenka</strong><small>DIAGNOSTIKA STAVEB</small></span>
+      </a>
+      <div class="admin-login-copy">
+        <span class="admin-kicker">SPRÁVA OBSAHU</span>
+        <h1 id="admin-title">Přihlášení do editoru</h1>
+        <p>Po přihlášení můžete upravovat texty přímo na stránce a spravovat reference.</p>
+      </div>
+      <form class="admin-login-form" novalidate>
+        <label for="admin-password">Heslo</label>
+        <div class="admin-password-field">
+          <input id="admin-password" name="password" type="password" autocomplete="current-password" required autofocus>
+          <button class="admin-password-toggle" type="button" aria-label="Zobrazit heslo" aria-pressed="false">Zobrazit</button>
+        </div>
+        <p class="admin-login-status" role="alert" aria-live="polite"></p>
+        <button class="admin-submit" type="submit">Přihlásit se <span aria-hidden="true">→</span></button>
+      </form>
+      <a class="admin-back" href="index.html">← Zpět na veřejný web</a>
+    </section>
+    <aside class="admin-login-note"><span></span>Přihlášení platí pouze v této kartě prohlížeče.</aside>
+  </main>
+  <script src="admin-login.js?v=43"></script>
+</body>
+</html>

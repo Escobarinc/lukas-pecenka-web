@@ -1,0 +1,16 @@
+{
+  "reference_width":1440,
+  "page_height":1799,
+  "tolerance_pct":3,
+  "sections":[
+    {"id":"header","selector":".site-header","height":56},
+    {"id":"hero","selector":"section#hero","height":306},
+    {"id":"trust","selector":"section#trust-strip","height":64},
+    {"id":"process","selector":"section#process","height":367},
+    {"id":"report","selector":"section#report","height":291},
+    {"id":"features","selector":"section#feature-strip","height":56},
+    {"id":"scanner","selector":"section#scanner","height":286},
+    {"id":"contact","selector":"section#contact","height":282},
+    {"id":"footer","selector":".site-footer","height":91}
+  ]
+}

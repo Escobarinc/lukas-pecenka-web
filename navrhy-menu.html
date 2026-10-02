@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Návrhy menu — Lukáš Pečenka</title>
+<style>
+:root{--accent:#8a4b24;--accent2:#b06a3a;--ink:#111820;--paper:#f5f0e8;--line:#e6d9cc;--serif:Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}
+body{margin:0;background:#efe7dc;font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
+.intro{max-width:1240px;margin:0 auto;padding:34px 24px 10px}
+.intro h1{font:400 34px/1.1 var(--serif);margin:0 0 8px}
+.intro p{margin:0;color:#4a5156}
+.variant{max-width:1240px;margin:26px auto;padding:0 24px}
+.label{display:flex;align-items:baseline;gap:14px;margin-bottom:10px}
+.label b{font:400 26px var(--serif);color:var(--accent)}
+.label span{color:#4a5156;font-size:14px}
+.frame{border:1px solid #d5bfac;border-radius:6px;overflow:hidden;box-shadow:0 10px 26px rgba(45,30,18,.1)}
+.hero-strip{height:110px;background:linear-gradient(90deg,#f5f0e8 0 40%,#3a2a1e 60%,#1d1510);}
+
+/* společná hlavička */
+.hdr{height:82px;background:#fff;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;padding:0 22px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand img{height:50px}
+.brand strong{display:block;font:700 20px/1 var(--serif);white-space:nowrap}
+.brand small{display:block;margin-top:4px;font:700 9.5px Arial;letter-spacing:.14em;color:#7a5a43}
+.nav{display:flex;justify-content:center;align-items:center;flex-wrap:nowrap}
+.nav a{white-space:nowrap;text-decoration:none;color:var(--ink)}
+.right{display:flex;align-items:center;gap:12px}
+.mode{width:44px;height:44px;border-radius:50%;border:1px solid #dcc7b5;background:#fbf7f2;color:var(--accent);display:grid;place-items:center;cursor:pointer;transition:transform .3s ease,background .2s}
+.mode:hover{transform:rotate(-20deg);background:#f3e6d8}
+.mode svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
+.cta{white-space:nowrap;height:46px;padding:0 20px;border-radius:4px;background:linear-gradient(180deg,#a5683d,#73391a);color:#fff;font:400 16px var(--serif);display:inline-flex;align-items:center;gap:12px;text-decoration:none;box-shadow:0 8px 18px rgba(115,57,26,.25);transition:transform .2s,box-shadow .2s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(115,57,26,.32)}
+.cta span{transition:transform .2s}.cta:hover span{transform:translateX(4px)}
+
+/* A – podtržení vyroste od středu */
+.vA .nav{gap:15px}
+.vA .nav a{position:relative;font:400 14px var(--serif);padding:8px 0;color:#1b2228;transition:color .25s}
+.vA .nav a::after{content:"";position:absolute;left:50%;right:50%;bottom:0;height:2px;background:var(--accent);border-radius:2px;transition:left .3s ease,right .3s ease}
+.vA .nav a:hover{color:var(--accent)}
+.vA .nav a:hover::after,.vA .nav a.on::after{left:0;right:0}
+.vA .nav a.on{color:var(--accent)}
+
+/* B – béžová „pilulka“ za položkou */
+.vB .nav{gap:4px}
+.vB .nav a{font:700 13px Arial;letter-spacing:.02em;padding:11px 14px;border-radius:4px;color:#2a2f33;transition:background .25s,color .25s,transform .25s}
+.vB .nav a:hover{background:#f3e6d8;color:var(--accent);transform:translateY(-1px)}
+.vB .nav a.on{background:var(--accent);color:#fff;box-shadow:0 6px 14px rgba(138,75,36,.25)}
+
+/* C – klouzavý ukazatel (posouvá se za myší) */
+.vC .nav{position:relative;gap:28px}
+.vC .nav a{font:700 12.5px Arial;letter-spacing:.12em;text-transform:uppercase;padding:12px 0;color:#2a2f33;transition:color .25s}
+.vC .nav a:hover,.vC .nav a.on{color:var(--accent)}
+.vC .slider{position:absolute;bottom:2px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:left .35s cubic-bezier(.4,1.4,.5,1),width .35s cubic-bezier(.4,1.4,.5,1);pointer-events:none}
+.vC .nav a .dot{display:inline-block;width:0;height:6px;border-radius:50%;background:var(--accent);margin-right:0;vertical-align:middle;transition:width .25s,margin .25s}
+
+/* dvouřádková hlavička: nahoře logo + tlačítka, pod tím pruh s menu */
+.hdr2{background:#fff;border-bottom:1px solid var(--line)}
+.hdr2 .top{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 28px}
+.hdr2 .bar{border-top:1px solid var(--line)}
+.vB .bar{background:#faf6f0}
+.vB .nav{gap:6px;padding:8px 20px}
+.vB .nav a{font:700 14px Arial;padding:11px 16px}
+.vC .bar{background:#fff}
+.vC .nav{gap:24px;height:54px}
+.vC .nav a{font-size:12px;padding:17px 0}
+</style></head>
+<body>
+<div class="intro">
+  <h1>Návrhy menu</h1>
+  <p>Najeďte myší na položky menu. Plné názvy všech 8 položek se na jeden řádek s logem a tlačítky nevejdou – proto B a C mají menu na samostatném pruhu. Ve všech variantách je heslo pryč a tlačítko den/noc + „Objednat průzkum“ jsou úplně vpravo. Zvýrazněná položka = stránka, na které návštěvník je.</p>
+</div>
+
+<section class="variant vA">
+  <div class="label"><b>A</b><span>Jeden řádek – patkové písmo, linka vyroste od středu (názvy zkrácené, aby se vešly)</span></div>
+  <div class="frame"><header class="hdr">
+    <a class="brand" href="#"><img src="assets/logo-light-source.png" alt=""><span><strong>Lukáš Pečenka</strong><small>DIAGNOSTIKA STAVEB</small></span></a>
+    <nav class="nav"><a href="#">Průzkum</a><a href="#" class="on">Diagnostika</a><a href="#">Technologie</a><a href="#">Ukázka průzkumu</a><a href="#">Reference</a><a href="#">O mně</a><a href="#">Otázky a odpovědi</a><a href="#">Kontakt</a></nav>
+    <div class="right"><button class="mode" aria-label="Režim"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button><a class="cta" href="#">Objednat průzkum <span>→</span></a></div>
+  </header><div class="hero-strip"></div></div>
+</section>
+
+<section class="variant vB">
+  <div class="label"><b>B</b><span>Dva řádky – menu na béžovém pruhu, při najetí se rozsvítí pole, aktivní stránka je hnědá</span></div>
+  <div class="frame"><header class="hdr2">
+    <div class="top"><a class="brand" href="#"><img src="assets/logo-light-source.png" alt=""><span><strong>Lukáš Pečenka</strong><small>DIAGNOSTIKA STAVEB</small></span></a>
+    <div class="right"><button class="mode" aria-label="Režim"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button><a class="cta" href="#">Objednat průzkum <span>→</span></a></div></div>
+    <div class="bar"><nav class="nav"><a href="#">Sanační průzkum</a><a href="#" class="on">Diagnostika</a><a href="#">Sanační technologie</a><a href="#">Ukázka průzkumu</a><a href="#">Reference</a><a href="#">O mně</a><a href="#">Otázky a odpovědi</a><a href="#">Kontakt</a></nav></div>
+  </header><div class="hero-strip"></div></div>
+</section>
+
+<section class="variant vC">
+  <div class="label"><b>C</b><span>Dva řádky – verzálky s prostrkáním, hnědá linka klouže za myší</span></div>
+  <div class="frame"><header class="hdr2">
+    <div class="top"><a class="brand" href="#"><img src="assets/logo-light-source.png" alt=""><span><strong>Lukáš Pečenka</strong><small>DIAGNOSTIKA STAVEB</small></span></a>
+    <div class="right"><button class="mode" aria-label="Režim"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button><a class="cta" href="#">Objednat průzkum <span>→</span></a></div></div>
+    <div class="bar"><nav class="nav"><a href="#">Sanační průzkum</a><a href="#" class="on">Diagnostika</a><a href="#">Sanační technologie</a><a href="#">Ukázka průzkumu</a><a href="#">Reference</a><a href="#">O mně</a><a href="#">Otázky a odpovědi</a><a href="#">Kontakt</a><span class="slider"></span></nav></div>
+  </header><div class="hero-strip"></div></div>
+</section>
+
+<script>
+document.querySelectorAll('.vC .nav').forEach(nav=>{
+  const s=nav.querySelector('.slider'), on=nav.querySelector('a.on');
+  const go=a=>{s.style.left=a.offsetLeft+'px';s.style.width=a.offsetWidth+'px';};
+  requestAnimationFrame(()=>go(on));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('mouseenter',()=>go(a)));
+  nav.addEventListener('mouseleave',()=>go(on));
+});
+document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+</script>
+</body></html>

@@ -1,0 +1,83 @@
+{
+  "style_prefix": "Reference-derived high-resolution assets preserving the approved visual composition.",
+  "assets": [
+    {
+      "id": "hero_reference",
+      "slot": "section#hero .hero-photo",
+      "file": "assets/hero-reference.jpg",
+      "gen_size": "2106x717",
+      "slot_ratio": "3.04:1",
+      "object_fit": "cover",
+      "object_position": "50% 50%",
+      "subject": "Approved hero photographic region from supplied reference",
+      "subject_frame_pct": 100,
+      "camera": "reference",
+      "prompt": "reference-derived"
+    },
+    {
+      "id": "process_pdf_reference",
+      "slot": "section#process .exact-preview img",
+      "file": "assets/process-pdf-reference.jpg",
+      "gen_size": "1350x495",
+      "slot_ratio": "2.73:1",
+      "object_fit": "cover",
+      "object_position": "50% 50%",
+      "subject": "Approved four-page PDF preview strip",
+      "subject_frame_pct": 100,
+      "camera": "reference",
+      "prompt": "reference-derived"
+    },
+    {
+      "id": "report_reference",
+      "slot": "section#report .report-visual img",
+      "file": "assets/report-reference.jpg",
+      "gen_size": "1455x681",
+      "slot_ratio": "2.14:1",
+      "object_fit": "cover",
+      "object_position": "50% 50%",
+      "subject": "Approved sanační průzkum book mockup",
+      "subject_frame_pct": 100,
+      "camera": "reference",
+      "prompt": "reference-derived"
+    },
+    {
+      "id": "scanner_reference",
+      "slot": "section#scanner .scanner-photo",
+      "file": "assets/scanner-reference.jpg",
+      "gen_size": "2196x621",
+      "slot_ratio": "3.54:1",
+      "object_fit": "cover",
+      "object_position": "50% 50%",
+      "subject": "Approved scanner diagnostic photographic region",
+      "subject_frame_pct": 100,
+      "camera": "reference",
+      "prompt": "reference-derived"
+    },
+    {
+      "id": "process_lines_left",
+      "slot": "section#process .left-lines",
+      "file": "assets/process-lines-left.jpg",
+      "gen_size": "216x858",
+      "slot_ratio": "0.40:1",
+      "object_fit": "cover",
+      "object_position": "50% 50%",
+      "subject": "Left architectural line-art edge",
+      "subject_frame_pct": 100,
+      "camera": "reference",
+      "prompt": "reference-derived"
+    },
+    {
+      "id": "process_lines_right",
+      "slot": "section#process .right-lines",
+      "file": "assets/process-lines-right.jpg",
+      "gen_size": "216x858",
+      "slot_ratio": "0.40:1",
+      "object_fit": "cover",
+      "object_position": "50% 50%",
+      "subject": "Right architectural line-art edge",
+      "subject_frame_pct": 100,
+      "camera": "reference",
+      "prompt": "reference-derived"
+    }
+  ]
+}
