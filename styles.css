@@ -319,3 +319,16 @@ body,body *:not(.signature){font-family:var(--font-apple)!important}
 h1,h2,h3,.brand-copy strong{font-weight:600!important;letter-spacing:-.01em}
 .hero-labels text{font-family:var(--font-apple)!important}
 /* KONEC APPLE PÍSMA */
+/* Patička se 4 sítěmi – kontakty se nesmí zkracovat */
+@media (min-width:1181px){.site-footer .footer-main{grid-template-columns:1.3fr auto auto auto auto;gap:34px}.footer-contact-link span{overflow:visible;white-space:nowrap}}
+/* 2. 10. večer: výraznější kontakty, souhlas, černé popisky v hero */
+.direct-contact a{font-size:16px!important;font-weight:700;color:#5f3015!important;gap:14px!important}
+.direct-contact a:hover .contact-value{text-decoration:underline;text-underline-offset:4px}
+.direct-contact .contact-icon{background:#8a4b24!important;color:#fff!important}
+.direct-contact .contact-icon svg{stroke:#fff!important}
+.upload-note svg{fill:none!important;stroke:#8a4b24!important;stroke-width:1.8!important;stroke-linejoin:round}
+.consent{font-size:14px!important;font-weight:600;color:#1b2228}
+.consent input{width:20px!important;height:20px!important;accent-color:#8a4b24}
+.hero-labels .hl-tag text{fill:#111820;stroke:rgba(255,255,255,.75);stroke-width:5px}
+.hero-labels .hl-tag circle,.hero-labels .hl-tag polyline{stroke:#111820}
+.hero-labels .hl-tag .hl-dot{fill:#111820}
