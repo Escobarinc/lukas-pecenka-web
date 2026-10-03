@@ -1,2 +1,6 @@
+# PRACOVNÍ NÁHLED – web zatím není spuštěný, vyhledávače ho nemají indexovat.
+# PŘI SPUŠTĚNÍ nahradit obsahem souboru PROJEKT/SPUSTENI.md (sekce robots.txt).
 User-agent: *
 Disallow: /
+
+Sitemap: https://lukaspecenka.cz/sitemap.xml

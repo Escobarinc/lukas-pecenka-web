@@ -333,3 +333,29 @@ h1,h2,h3,.brand-copy strong{font-weight:600!important;letter-spacing:-.01em}
 .hero-labels .hl-tag circle,.hero-labels .hl-tag polyline{stroke:#000;stroke-width:3.5}
 .hero-labels .hl-tag .hl-dot{fill:#111820}
 .trust-cr{width:52px;height:auto;flex:0 0 52px;display:block}
+/* Vybrané průzkumy – varianta B: miniatura fotky vlevo (3. 10.) */
+.ref-card--foto{display:grid;grid-template-columns:120px 1fr;padding:0;overflow:hidden}
+.ref-thumb{position:relative;min-height:150px;background:#f1e2d2;display:grid;place-items:center;overflow:hidden}
+.ref-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.ref-card--foto:hover .ref-thumb img{transform:scale(1.06)}
+.ref-thumb svg{width:40px;height:40px;fill:none;stroke:#8a4b24;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ref-card-body{padding:16px 18px}
+.ref-card-typ{display:block;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a4b24;margin-bottom:8px}
+.ref-card--foto h3{font-size:18px}
+@media (max-width:700px){.ref-card--foto{grid-template-columns:100px 1fr}}
+@media (min-width:1001px){
+  .ref-featured--home{grid-template-columns:repeat(3,1fr)}
+  .ref-featured--home .ref-more{grid-column:1/-1;flex-direction:row;align-items:center;gap:28px;padding:22px 30px}
+  .ref-featured--home .ref-more-link{margin:0 0 0 auto}
+}
+/* Kroky – jemnější reakce na najetí myší (3. 10.) */
+.step-card:hover .step-icon{transform:translateY(-4px)!important;background:#fff!important;border-color:#c9a07e!important;color:#8a4b24!important;box-shadow:0 10px 22px rgba(115,57,26,.14)!important}
+.step-card:hover .step-icon svg{transform:scale(1.06)!important}
+.step-card:hover .num{color:#a0663e!important;transform:none!important}
+.step-card:hover h3{color:inherit!important}
+
+.consent-info{font-size:13px!important;color:#4a5156;line-height:1.5;margin:0}.consent-info a{color:#8a4b24;text-decoration:underline}
+a.cookie-footer-link{margin-left:auto}
+/* Přístupnost: odkaz „Přeskočit na obsah“ (viditelný jen při ovládání klávesnicí) */
+.skip-link{position:absolute;left:12px;top:-60px;z-index:100;background:#8a4b24;color:#fff;padding:10px 16px;border-radius:4px;font-weight:700;transition:top .2s}
+.skip-link:focus{top:12px}

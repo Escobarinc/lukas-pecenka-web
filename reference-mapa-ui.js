@@ -57,7 +57,7 @@
     const limit = Number(box.dataset.limit || V.length);
     const vyber = box.dataset.pick ? box.dataset.pick.split(',').map(i => V[Number(i)]) : V.slice(0, limit);
     box.insertAdjacentHTML('afterbegin', vyber.map(r => `
-      <article class="ref-card"><div class="ref-card-top"><svg viewBox="0 0 24 24">${IKONY[r.typ] || IKONY['Památka']}</svg><span>${r.typ} · ${r.rok}</span></div>
-      <h3>${r.nazev}</h3><p class="ref-misto">${r.misto}</p><p>${r.popis}</p></article>`).join(''));
+      <article class="ref-card ref-card--foto"><div class="ref-thumb">${r.foto ? `<img src="${r.foto}" alt="${r.nazev}, ${r.misto}" loading="lazy">` : `<svg viewBox="0 0 24 24" aria-hidden="true">${IKONY[r.typ] || IKONY['Památka']}</svg>`}</div>
+      <div class="ref-card-body"><span class="ref-card-typ">${r.typ} · ${r.rok}</span><h3>${r.nazev}</h3><p class="ref-misto">${r.misto}</p><p>${r.popis}</p></div></article>`).join(''));
   });
 })();
