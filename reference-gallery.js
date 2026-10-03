@@ -176,7 +176,7 @@
   function prepareStaticCards() {
     [...document.querySelectorAll('.reference-card')].forEach((card, index) => {
       const title = card.querySelector('h3')?.textContent.trim() || '';
-      const slug = titleToSlug[title];
+      const slug = card.dataset.album || titleToSlug[title];
       const fallback = fallbackCover(index);
       const project = slug && manifest[slug] ? manifest[slug] : { title, images: [fallback] };
       prepareCard(card, project, { slug, fallbackCover: fallback, eager: index < 4 });

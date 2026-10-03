@@ -1,0 +1,29 @@
+*{box-sizing:border-box}body{margin:0;background:#f5f0e8;color:#111820;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:#8a4b24}main{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
+.lista{display:flex;align-items:center;gap:24px;padding:12px 24px;background:#111820;color:#fff;position:sticky;top:0;z-index:5;flex-wrap:wrap}
+.lista nav{display:flex;gap:6px}.lista nav a,.lista span a{color:#f1dfcf;text-decoration:none;padding:6px 12px;border-radius:4px}.lista nav a.on{background:#8a4b24;color:#fff}.lista span{margin-left:auto;display:flex;gap:6px}
+h1{font-size:26px;margin:0}h2{font-size:19px;margin:28px 0 10px}.hlava{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+.napoveda{color:#5d646a;margin:0 0 16px}.zprava{background:#e7f3e9;border:1px solid #9ccaa6;color:#1f5b2c;padding:10px 14px;border-radius:6px}.chyba{background:#fbe9e7;border:1px solid #e3a69e;color:#8a1f12;padding:10px 14px;border-radius:6px}
+.btn{display:inline-block;background:#8a4b24;color:#fff;border:0;border-radius:4px;padding:10px 18px;font:600 15px inherit;font-family:inherit;cursor:pointer;text-decoration:none}.btn:hover{background:#6f3517}
+.btn.sedy,button.sedy{background:#e6ddd2;color:#1b2228}.btn.maly,button.maly{padding:6px 11px;font-size:13px;border:0;border-radius:4px;cursor:pointer;font-family:inherit}.cerveny{background:#fbe9e7;color:#8a1f12}
+form.inline{display:inline}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e3d5c6;border-radius:6px;overflow:hidden}
+th,td{text-align:left;padding:10px 12px;border-top:1px solid #f0e6da;vertical-align:middle}th{background:#fbf7f1;font-size:13px;color:#5d646a}td small{display:block;color:#8a8f94;font-size:12px}
+td.akce{white-space:nowrap;text-align:right}td.akce>*{margin-left:4px}tr.skryto td{opacity:.55}
+.formular{background:#fff;border:1px solid #e3d5c6;border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.formular label,.pole{display:flex;flex-direction:column;gap:6px;font-weight:600}.formular small{font-weight:400;color:#6b5d51}
+input,select,textarea{font:inherit;font-weight:400;padding:10px 12px;border:1px solid #d5c4b2;border-radius:4px;background:#fffdfa;width:100%}
+input:focus,select:focus,textarea:focus,.editor:focus{outline:2px solid #8a4b24;outline-offset:1px}
+.dva{display:grid;grid-template-columns:1fr 1fr;gap:12px}fieldset{border:1px solid #e3d5c6;border-radius:6px;padding:12px 16px;display:flex;flex-direction:column;gap:12px}legend{font-weight:600;color:#6b5d51;padding:0 6px}
+.editor-lista{display:flex;flex-wrap:wrap;gap:4px;background:#fbf7f1;border:1px solid #d5c4b2;border-bottom:0;border-radius:4px 4px 0 0;padding:6px}
+.editor-lista button{background:#fff;border:1px solid #d5c4b2;border-radius:3px;padding:5px 10px;cursor:pointer;font:inherit;font-size:13px}.editor-lista button:hover{background:#f1e2d2}
+.editor{min-height:360px;max-height:70vh;overflow:auto;border:1px solid #d5c4b2;border-radius:0 0 4px 4px;padding:14px 18px;background:#fff;font-weight:400;line-height:1.65}
+.editor h2{font-size:22px;margin:18px 0 8px}.editor h3{font-size:18px;margin:14px 0 6px}.editor p{margin:0 0 10px}
+.nahled-foto{max-width:280px;border-radius:4px;border:1px solid #e3d5c6}.tlacitka{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.adresa{color:#6b5d51;font-size:13px}
+.karty{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}.karta{display:grid;grid-template-columns:90px 1fr;gap:12px;background:#fff;border:1px solid #e3d5c6;border-radius:6px;padding:10px;align-items:center}
+.karta img,.bez-foto{width:90px;height:70px;object-fit:cover;border-radius:4px;background:#eee;display:grid;place-items:center;font-size:11px;color:#777}.karta small{display:block;color:#6b5d51}.karta .akce{grid-column:1/-1;display:flex;gap:4px;flex-wrap:wrap}.karta.skryto{opacity:.55}
+.fotky{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}.fotky li{position:relative;background:#fbf7f1;border:1px solid #e3d5c6;border-radius:4px;padding:4px;cursor:grab}
+.fotky li:first-child{outline:3px solid #8a4b24}.fotky li:first-child::after{content:"úvodní";position:absolute;left:8px;top:8px;background:#8a4b24;color:#fff;font-size:11px;padding:1px 6px;border-radius:3px}
+.fotky img{width:100%;height:95px;object-fit:cover;border-radius:3px;display:block}.odebrat{position:absolute;right:6px;top:6px;width:26px;height:26px;border-radius:50%;border:0;background:#8a1f12;color:#fff;cursor:pointer;font-size:16px}
+.posun{display:flex;justify-content:center;gap:4px;margin-top:4px}.posun button{border:1px solid #d5c4b2;background:#fff;border-radius:3px;cursor:pointer;padding:2px 10px}
+.prihlaseni{max-width:380px;margin:12vh auto;background:#fff;border:1px solid #e3d5c6;border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:14px}.prihlaseni p{margin:0;color:#6b5d51}
+@media (max-width:700px){.dva{grid-template-columns:1fr}td.akce{white-space:normal}th:nth-child(3),td:nth-child(3){display:none}}

@@ -1,0 +1,686 @@
+{
+ "reference": [
+  {
+   "id": "sanace-odvlhceni-historickeho-objektu",
+   "sekce": "aktualni",
+   "nazev": "Sanace a odvlhčení historické stavby | 2019–2026",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-odvlhceni-historickeho-objektu/photo-01.png",
+    "assets/reference-albums/sanace-odvlhceni-historickeho-objektu/photo-02.png",
+    "assets/reference-albums/sanace-odvlhceni-historickeho-objektu/photo-03.png",
+    "assets/reference-albums/sanace-odvlhceni-historickeho-objektu/photo-04.png",
+    "assets/reference-albums/sanace-odvlhceni-historickeho-objektu/photo-05.png",
+    "assets/reference-albums/sanace-odvlhceni-historickeho-objektu/photo-06.png",
+    "assets/reference-albums/sanace-odvlhceni-historickeho-objektu/photo-07.png",
+    "assets/reference-albums/sanace-odvlhceni-historickeho-objektu/photo-08.png"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-kaple",
+   "sekce": "aktualni",
+   "nazev": "Sanace kaple svaté Markéty v obci Cejle",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-kaple/photo-01.jpg",
+    "assets/reference-albums/sanace-kaple/photo-02.jpg",
+    "assets/reference-albums/sanace-kaple/photo-03.jpg",
+    "assets/reference-albums/sanace-kaple/photo-04.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-sklepa-cinzovniho-domu-v-plzni",
+   "sekce": "aktualni",
+   "nazev": "Sanace sklepa činžovního domu v Plzni",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-sklepa-cinzovniho-domu-v-plzni/photo-01.jpg",
+    "assets/reference-albums/sanace-sklepa-cinzovniho-domu-v-plzni/photo-02.jpg",
+    "assets/reference-albums/sanace-sklepa-cinzovniho-domu-v-plzni/photo-03.jpg",
+    "assets/reference-albums/sanace-sklepa-cinzovniho-domu-v-plzni/photo-04.jpg",
+    "assets/reference-albums/sanace-sklepa-cinzovniho-domu-v-plzni/photo-05.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "vlhkostni-problemy-se-nevyhybaji-ani-novostavbam",
+   "sekce": "aktualni",
+   "nazev": "Vlhkostní problémy se nevyhýbají ani novostavbám",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/vlhkostni-problemy-se-nevyhybaji-ani-novostavbam/photo-01.jpg",
+    "assets/reference-albums/vlhkostni-problemy-se-nevyhybaji-ani-novostavbam/photo-02.jpg",
+    "assets/reference-albums/vlhkostni-problemy-se-nevyhybaji-ani-novostavbam/photo-03.jpg",
+    "assets/reference-albums/vlhkostni-problemy-se-nevyhybaji-ani-novostavbam/photo-04.jpg",
+    "assets/reference-albums/vlhkostni-problemy-se-nevyhybaji-ani-novostavbam/photo-05.jpg",
+    "assets/reference-albums/vlhkostni-problemy-se-nevyhybaji-ani-novostavbam/photo-06.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "horizontalni-infuzni-clona-nove-mesto-na-morave",
+   "sekce": "aktualni",
+   "nazev": "Horizontální infuzní clona Nové Město na Moravě",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/horizontalni-infuzni-clona-nove-mesto-na-morave/photo-01.jpg",
+    "assets/reference-albums/horizontalni-infuzni-clona-nove-mesto-na-morave/photo-02.jpg",
+    "assets/reference-albums/horizontalni-infuzni-clona-nove-mesto-na-morave/photo-03.jpg",
+    "assets/reference-albums/horizontalni-infuzni-clona-nove-mesto-na-morave/photo-04.jpg",
+    "assets/reference-albums/horizontalni-infuzni-clona-nove-mesto-na-morave/photo-05.jpg",
+    "assets/reference-albums/horizontalni-infuzni-clona-nove-mesto-na-morave/photo-06.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanovat-jde-kazda-nemovitost",
+   "sekce": "aktualni",
+   "nazev": "Sanovat lze každou nemovitost",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanovat-jde-kazda-nemovitost/photo-01.jpg",
+    "assets/reference-albums/sanovat-jde-kazda-nemovitost/photo-02.jpg",
+    "assets/reference-albums/sanovat-jde-kazda-nemovitost/photo-03.jpg",
+    "assets/reference-albums/sanovat-jde-kazda-nemovitost/photo-04.jpg",
+    "assets/reference-albums/sanovat-jde-kazda-nemovitost/photo-05.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "jak-to-dopada-kdyz-se-u-prace-nepremysli",
+   "sekce": "aktualni",
+   "nazev": "Jak to dopadá, když se u práce nepřemýšlí",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/jak-to-dopada-kdyz-se-u-prace-nepremysli/photo-01.jpg",
+    "assets/reference-albums/jak-to-dopada-kdyz-se-u-prace-nepremysli/photo-02.jpg",
+    "assets/reference-albums/jak-to-dopada-kdyz-se-u-prace-nepremysli/photo-03.jpg",
+    "assets/reference-albums/jak-to-dopada-kdyz-se-u-prace-nepremysli/photo-04.jpg",
+    "assets/reference-albums/jak-to-dopada-kdyz-se-u-prace-nepremysli/photo-05.jpg",
+    "assets/reference-albums/jak-to-dopada-kdyz-se-u-prace-nepremysli/photo-06.jpg",
+    "assets/reference-albums/jak-to-dopada-kdyz-se-u-prace-nepremysli/photo-07.jpg",
+    "assets/reference-albums/jak-to-dopada-kdyz-se-u-prace-nepremysli/photo-08.jpg",
+    "assets/reference-albums/jak-to-dopada-kdyz-se-u-prace-nepremysli/photo-09.jpg",
+    "assets/reference-albums/jak-to-dopada-kdyz-se-u-prace-nepremysli/photo-10.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "uz-jsme-se-na-to-nemohli-divat",
+   "sekce": "aktualni",
+   "nazev": "Fasáda zámku",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/uz-jsme-se-na-to-nemohli-divat/photo-01.jpg",
+    "assets/reference-albums/uz-jsme-se-na-to-nemohli-divat/photo-02.jpg",
+    "assets/reference-albums/uz-jsme-se-na-to-nemohli-divat/photo-03.jpg",
+    "assets/reference-albums/uz-jsme-se-na-to-nemohli-divat/photo-04.jpg",
+    "assets/reference-albums/uz-jsme-se-na-to-nemohli-divat/photo-05.jpg",
+    "assets/reference-albums/uz-jsme-se-na-to-nemohli-divat/photo-06.jpg",
+    "assets/reference-albums/uz-jsme-se-na-to-nemohli-divat/photo-07.jpg",
+    "assets/reference-albums/uz-jsme-se-na-to-nemohli-divat/photo-08.jpg",
+    "assets/reference-albums/uz-jsme-se-na-to-nemohli-divat/photo-09.jpg",
+    "assets/reference-albums/uz-jsme-se-na-to-nemohli-divat/photo-10.jpg",
+    "assets/reference-albums/uz-jsme-se-na-to-nemohli-divat/photo-11.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "zabokliky-2-etapa",
+   "sekce": "aktualni",
+   "nazev": "Žabokliky — 2. etapa",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/zabokliky-2-etapa/photo-01.jpg",
+    "assets/reference-albums/zabokliky-2-etapa/photo-02.jpg",
+    "assets/reference-albums/zabokliky-2-etapa/photo-03.jpg",
+    "assets/reference-albums/zabokliky-2-etapa/photo-04.jpg",
+    "assets/reference-albums/zabokliky-2-etapa/photo-05.jpg",
+    "assets/reference-albums/zabokliky-2-etapa/photo-06.jpg",
+    "assets/reference-albums/zabokliky-2-etapa/photo-07.jpg",
+    "assets/reference-albums/zabokliky-2-etapa/photo-08.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "fara-v-obci-zabokliky-nedaleko-zatce",
+   "sekce": "aktualni",
+   "nazev": "Fara v obci Žabokliky",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/fara-v-obci-zabokliky-nedaleko-zatce/photo-01.jpg",
+    "assets/reference-albums/fara-v-obci-zabokliky-nedaleko-zatce/photo-02.jpg",
+    "assets/reference-albums/fara-v-obci-zabokliky-nedaleko-zatce/photo-03.jpg",
+    "assets/reference-albums/fara-v-obci-zabokliky-nedaleko-zatce/photo-04.jpg",
+    "assets/reference-albums/fara-v-obci-zabokliky-nedaleko-zatce/photo-05.jpg",
+    "assets/reference-albums/fara-v-obci-zabokliky-nedaleko-zatce/photo-06.jpg",
+    "assets/reference-albums/fara-v-obci-zabokliky-nedaleko-zatce/photo-07.jpg",
+    "assets/reference-albums/fara-v-obci-zabokliky-nedaleko-zatce/photo-08.jpg",
+    "assets/reference-albums/fara-v-obci-zabokliky-nedaleko-zatce/photo-09.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "necekane-zjisteni",
+   "sekce": "aktualni",
+   "nazev": "Nečekané zjištění",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/necekane-zjisteni/photo-01.jpg",
+    "assets/reference-albums/necekane-zjisteni/photo-02.jpg",
+    "assets/reference-albums/necekane-zjisteni/photo-03.jpg",
+    "assets/reference-albums/necekane-zjisteni/photo-04.jpg",
+    "assets/reference-albums/necekane-zjisteni/photo-05.jpg",
+    "assets/reference-albums/necekane-zjisteni/photo-06.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "druha-etapa-sanace-tvrze-v-hrobcicich",
+   "sekce": "aktualni",
+   "nazev": "Druhá etapa sanace tvrze v Hrobčicích",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/druha-etapa-sanace-tvrze-v-hrobcicich/photo-01.jpg",
+    "assets/reference-albums/druha-etapa-sanace-tvrze-v-hrobcicich/photo-02.jpg",
+    "assets/reference-albums/druha-etapa-sanace-tvrze-v-hrobcicich/photo-03.jpg",
+    "assets/reference-albums/druha-etapa-sanace-tvrze-v-hrobcicich/photo-04.jpg",
+    "assets/reference-albums/druha-etapa-sanace-tvrze-v-hrobcicich/photo-05.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-tvrze-z-druhe-poloviny-16-stoleti",
+   "sekce": "domy",
+   "nazev": "Sanace tvrze z druhé poloviny 16. století",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-tvrze-z-druhe-poloviny-16-stoleti/photo-01.jpg",
+    "assets/reference-albums/sanace-tvrze-z-druhe-poloviny-16-stoleti/photo-02.jpg",
+    "assets/reference-albums/sanace-tvrze-z-druhe-poloviny-16-stoleti/photo-03.jpg",
+    "assets/reference-albums/sanace-tvrze-z-druhe-poloviny-16-stoleti/photo-04.jpg",
+    "assets/reference-albums/sanace-tvrze-z-druhe-poloviny-16-stoleti/photo-05.jpg",
+    "assets/reference-albums/sanace-tvrze-z-druhe-poloviny-16-stoleti/photo-06.jpg",
+    "assets/reference-albums/sanace-tvrze-z-druhe-poloviny-16-stoleti/photo-07.jpg",
+    "assets/reference-albums/sanace-tvrze-z-druhe-poloviny-16-stoleti/photo-08.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-vily",
+   "sekce": "domy",
+   "nazev": "Sanace vily",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-vily/photo-01.jpg",
+    "assets/reference-albums/sanace-vily/photo-02.jpg",
+    "assets/reference-albums/sanace-vily/photo-03.jpg",
+    "assets/reference-albums/sanace-vily/photo-04.jpg",
+    "assets/reference-albums/sanace-vily/photo-05.jpg",
+    "assets/reference-albums/sanace-vily/photo-06.jpg",
+    "assets/reference-albums/sanace-vily/photo-07.jpg",
+    "assets/reference-albums/sanace-vily/photo-08.jpg",
+    "assets/reference-albums/sanace-vily/photo-09.jpg",
+    "assets/reference-albums/sanace-vily/photo-10.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-rodinneho-domu-ve-steti",
+   "sekce": "domy",
+   "nazev": "Sanace rodinného domu ve Štětí",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-rodinneho-domu-ve-steti/photo-01.jpg",
+    "assets/reference-albums/sanace-rodinneho-domu-ve-steti/photo-02.jpg",
+    "assets/reference-albums/sanace-rodinneho-domu-ve-steti/photo-03.jpg",
+    "assets/reference-albums/sanace-rodinneho-domu-ve-steti/photo-04.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "hydroizolace-domu-v-hradci-kralove",
+   "sekce": "domy",
+   "nazev": "Hydroizolace domu v Hradci Králové",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-01.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-02.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-03.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-04.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-05.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-06.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-07.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-08.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-09.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-10.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-11.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-12.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-13.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-14.jpeg",
+    "assets/reference-albums/hydroizolace-domu-v-hradci-kralove/photo-15.jpeg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-domu-s-nepristupnou-vnejsi-stenou",
+   "sekce": "domy",
+   "nazev": "Sanace domu s nepřístupnou vnější stěnou",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-domu-s-nepristupnou-vnejsi-stenou/photo-01.jpeg",
+    "assets/reference-albums/sanace-domu-s-nepristupnou-vnejsi-stenou/photo-02.jpeg",
+    "assets/reference-albums/sanace-domu-s-nepristupnou-vnejsi-stenou/photo-03.jpeg",
+    "assets/reference-albums/sanace-domu-s-nepristupnou-vnejsi-stenou/photo-04.jpeg",
+    "assets/reference-albums/sanace-domu-s-nepristupnou-vnejsi-stenou/photo-05.jpeg",
+    "assets/reference-albums/sanace-domu-s-nepristupnou-vnejsi-stenou/photo-06.jpeg",
+    "assets/reference-albums/sanace-domu-s-nepristupnou-vnejsi-stenou/photo-07.jpeg",
+    "assets/reference-albums/sanace-domu-s-nepristupnou-vnejsi-stenou/photo-08.jpeg",
+    "assets/reference-albums/sanace-domu-s-nepristupnou-vnejsi-stenou/photo-09.jpeg",
+    "assets/reference-albums/sanace-domu-s-nepristupnou-vnejsi-stenou/photo-10.jpeg",
+    "assets/reference-albums/sanace-domu-s-nepristupnou-vnejsi-stenou/photo-11.jpeg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "predelani-spatne-provedene-sanace-u-rodinneho-domu",
+   "sekce": "domy",
+   "nazev": "Předělání špatně provedené sanace u rodinného domu",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-01.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-02.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-03.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-04.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-05.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-06.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-07.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-08.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-09.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-10.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-11.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-12.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-13.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-14.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-15.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-16.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-17.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-18.jpeg",
+    "assets/reference-albums/predelani-spatne-provedene-sanace-u-rodinneho-domu/photo-19.jpeg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-sklepu-se-stojici-vodou",
+   "sekce": "domy",
+   "nazev": "Sanace sklepa se stojící vodou",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-sklepu-se-stojici-vodou/photo-01.jpeg",
+    "assets/reference-albums/sanace-sklepu-se-stojici-vodou/photo-02.jpeg",
+    "assets/reference-albums/sanace-sklepu-se-stojici-vodou/photo-03.jpeg",
+    "assets/reference-albums/sanace-sklepu-se-stojici-vodou/photo-04.jpeg",
+    "assets/reference-albums/sanace-sklepu-se-stojici-vodou/photo-05.jpeg",
+    "assets/reference-albums/sanace-sklepu-se-stojici-vodou/photo-06.jpeg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-sklepa-pod-silnou-zatezi-tlakove-vody",
+   "sekce": "domy",
+   "nazev": "Sanace sklepa pod silnou zátěží tlakové vody",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-sklepa-pod-silnou-zatezi-tlakove-vody/photo-01.jpeg",
+    "assets/reference-albums/sanace-sklepa-pod-silnou-zatezi-tlakove-vody/photo-02.jpeg",
+    "assets/reference-albums/sanace-sklepa-pod-silnou-zatezi-tlakove-vody/photo-03.jpeg",
+    "assets/reference-albums/sanace-sklepa-pod-silnou-zatezi-tlakove-vody/photo-04.jpeg",
+    "assets/reference-albums/sanace-sklepa-pod-silnou-zatezi-tlakove-vody/photo-05.jpeg",
+    "assets/reference-albums/sanace-sklepa-pod-silnou-zatezi-tlakove-vody/photo-06.jpeg",
+    "assets/reference-albums/sanace-sklepa-pod-silnou-zatezi-tlakove-vody/photo-07.jpeg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-v-zabydlene-mistnosti",
+   "sekce": "domy",
+   "nazev": "Sanace v zabydlené místnosti",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-01.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-02.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-03.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-04.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-05.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-06.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-07.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-08.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-09.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-10.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-11.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-12.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-13.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-14.jpeg",
+    "assets/reference-albums/sanace-v-zabydlene-mistnosti/photo-15.jpeg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "zachrana-hydroizolace-v-hotove-hrube-stavbe",
+   "sekce": "domy",
+   "nazev": "Záchrana hydroizolace v hotové hrubé stavbě",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/zachrana-hydroizolace-v-hotove-hrube-stavbe/photo-01.jpeg",
+    "assets/reference-albums/zachrana-hydroizolace-v-hotove-hrube-stavbe/photo-02.jpeg",
+    "assets/reference-albums/zachrana-hydroizolace-v-hotove-hrube-stavbe/photo-03.jpeg",
+    "assets/reference-albums/zachrana-hydroizolace-v-hotove-hrube-stavbe/photo-04.jpeg",
+    "assets/reference-albums/zachrana-hydroizolace-v-hotove-hrube-stavbe/photo-05.jpeg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-barokniho-sankturinovskeho-domu-v-kutne-hore",
+   "sekce": "pamatky",
+   "nazev": "Sanace barokního Sankturinovského domu v Kutné Hoře",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-barokniho-sankturinovskeho-domu-v-kutne-hore/photo-01.jpg",
+    "assets/reference-albums/sanace-barokniho-sankturinovskeho-domu-v-kutne-hore/photo-02.jpg",
+    "assets/reference-albums/sanace-barokniho-sankturinovskeho-domu-v-kutne-hore/photo-03.jpg",
+    "assets/reference-albums/sanace-barokniho-sankturinovskeho-domu-v-kutne-hore/photo-04.jpg",
+    "assets/reference-albums/sanace-barokniho-sankturinovskeho-domu-v-kutne-hore/photo-05.jpg",
+    "assets/reference-albums/sanace-barokniho-sankturinovskeho-domu-v-kutne-hore/photo-06.jpg",
+    "assets/reference-albums/sanace-barokniho-sankturinovskeho-domu-v-kutne-hore/photo-07.jpg",
+    "assets/reference-albums/sanace-barokniho-sankturinovskeho-domu-v-kutne-hore/photo-08.jpg",
+    "assets/reference-albums/sanace-barokniho-sankturinovskeho-domu-v-kutne-hore/photo-09.jpg",
+    "assets/reference-albums/sanace-barokniho-sankturinovskeho-domu-v-kutne-hore/photo-10.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-kaplicky-v-obci-bily-kamen",
+   "sekce": "pamatky",
+   "nazev": "Sanace kapličky v obci Bílý Kámen",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-kaplicky-v-obci-bily-kamen/photo-01.jpg",
+    "assets/reference-albums/sanace-kaplicky-v-obci-bily-kamen/photo-02.jpg",
+    "assets/reference-albums/sanace-kaplicky-v-obci-bily-kamen/photo-03.jpg",
+    "assets/reference-albums/sanace-kaplicky-v-obci-bily-kamen/photo-04.jpg",
+    "assets/reference-albums/sanace-kaplicky-v-obci-bily-kamen/photo-05.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-kaple-nanebevzeti-panny-marie",
+   "sekce": "pamatky",
+   "nazev": "Sanace kaple Nanebevzetí Panny Marie",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-kaple-nanebevzeti-panny-marie/photo-01.jpg",
+    "assets/reference-albums/sanace-kaple-nanebevzeti-panny-marie/photo-02.jpg",
+    "assets/reference-albums/sanace-kaple-nanebevzeti-panny-marie/photo-03.jpg",
+    "assets/reference-albums/sanace-kaple-nanebevzeti-panny-marie/photo-04.jpg",
+    "assets/reference-albums/sanace-kaple-nanebevzeti-panny-marie/photo-05.jpg",
+    "assets/reference-albums/sanace-kaple-nanebevzeti-panny-marie/photo-06.jpg",
+    "assets/reference-albums/sanace-kaple-nanebevzeti-panny-marie/photo-07.jpg",
+    "assets/reference-albums/sanace-kaple-nanebevzeti-panny-marie/photo-08.jpg",
+    "assets/reference-albums/sanace-kaple-nanebevzeti-panny-marie/photo-09.jpg",
+    "assets/reference-albums/sanace-kaple-nanebevzeti-panny-marie/photo-10.jpg",
+    "assets/reference-albums/sanace-kaple-nanebevzeti-panny-marie/photo-11.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "jemnice",
+   "sekce": "pamatky",
+   "nazev": "Sanace budovy raně renesančního slohu v Jemnici",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/jemnice/photo-01.jpeg",
+    "assets/reference-albums/jemnice/photo-02.jpeg",
+    "assets/reference-albums/jemnice/photo-03.jpeg",
+    "assets/reference-albums/jemnice/photo-04.jpeg",
+    "assets/reference-albums/jemnice/photo-05.jpeg",
+    "assets/reference-albums/jemnice/photo-06.jpeg",
+    "assets/reference-albums/jemnice/photo-07.jpeg",
+    "assets/reference-albums/jemnice/photo-08.jpeg",
+    "assets/reference-albums/jemnice/photo-09.jpeg",
+    "assets/reference-albums/jemnice/photo-10.jpeg",
+    "assets/reference-albums/jemnice/photo-11.jpeg",
+    "assets/reference-albums/jemnice/photo-12.jpeg",
+    "assets/reference-albums/jemnice/photo-13.jpeg",
+    "assets/reference-albums/jemnice/photo-14.jpeg",
+    "assets/reference-albums/jemnice/photo-15.jpeg",
+    "assets/reference-albums/jemnice/photo-16.jpeg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "sanace-zamku-puklice",
+   "sekce": "pamatky",
+   "nazev": "Zámek Puklice z 19. století",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/sanace-zamku-puklice/photo-01.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-02.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-03.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-04.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-05.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-06.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-07.jpg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-08.jpg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-09.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-10.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-11.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-12.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-13.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-14.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-15.jpeg",
+    "assets/reference-albums/sanace-zamku-puklice/photo-16.jpeg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "evangelicky-kostel-ve-frydku-mistku",
+   "sekce": "pamatky",
+   "nazev": "Evangelický kostel ve Frýdku-Místku",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/evangelicky-kostel-ve-frydku-mistku/photo-01.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "narodni-muzeum-v-praze",
+   "sekce": "pamatky",
+   "nazev": "Národní muzeum v Praze",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/narodni-muzeum-v-praze/photo-01.jpg",
+    "assets/reference-albums/narodni-muzeum-v-praze/photo-02.jpg",
+    "assets/reference-albums/narodni-muzeum-v-praze/photo-03.jpg",
+    "assets/reference-albums/narodni-muzeum-v-praze/photo-04.jpg",
+    "assets/reference-albums/narodni-muzeum-v-praze/photo-05.jpg",
+    "assets/reference-albums/narodni-muzeum-v-praze/photo-06.jpg",
+    "assets/reference-albums/narodni-muzeum-v-praze/photo-07.jpg",
+    "assets/reference-albums/narodni-muzeum-v-praze/photo-08.jpg",
+    "assets/reference-albums/narodni-muzeum-v-praze/photo-09.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "kostel-ve-vresine",
+   "sekce": "pamatky",
+   "nazev": "Kostel ve Vřesině",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/kostel-ve-vresine/photo-01.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "furleova-kaple-v-mikulasovicich",
+   "sekce": "pamatky",
+   "nazev": "Fürleova kaple v Mikulášovicích",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/furleova-kaple-v-mikulasovicich/photo-01.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "kaplicka-v-ostrozske-nove-vsi",
+   "sekce": "pamatky",
+   "nazev": "Kaplička v Ostrožské Nové Vsi",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/kaplicka-v-ostrozske-nove-vsi/photo-01.jpg",
+    "assets/reference-albums/kaplicka-v-ostrozske-nove-vsi/photo-02.jpg",
+    "assets/reference-albums/kaplicka-v-ostrozske-nove-vsi/photo-03.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "reference-zamecek-drevic",
+   "sekce": "pamatky",
+   "nazev": "Zámeček Dřevíč",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/reference-zamecek-drevic/photo-01.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "kostel-v-obci-rybi",
+   "sekce": "pamatky",
+   "nazev": "Kostel v obci Rybí",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/kostel-v-obci-rybi/photo-01.jpg",
+    "assets/reference-albums/kostel-v-obci-rybi/photo-02.jpg",
+    "assets/reference-albums/kostel-v-obci-rybi/photo-03.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "zamek-stranov",
+   "sekce": "pamatky",
+   "nazev": "Zámek Stránov",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/zamek-stranov/photo-01.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "hradby-v-parku-pod-vlasskym-dvorem",
+   "sekce": "pamatky",
+   "nazev": "Hradby v parku pod Vlašským dvorem",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/hradby-v-parku-pod-vlasskym-dvorem/photo-01.jpg",
+    "assets/reference-albums/hradby-v-parku-pod-vlasskym-dvorem/photo-02.jpg",
+    "assets/reference-albums/hradby-v-parku-pod-vlasskym-dvorem/photo-03.jpg",
+    "assets/reference-albums/hradby-v-parku-pod-vlasskym-dvorem/photo-04.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "kostela-sv-jana-nepomuckeho-ve-stramberku",
+   "sekce": "pamatky",
+   "nazev": "Kostel sv. Jana Nepomuckého ve Štramberku",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/kostela-sv-jana-nepomuckeho-ve-stramberku/photo-01.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "tucnaci-a-jejich-domecky",
+   "sekce": "verejne",
+   "nazev": "Tučňáci a jejich domečky",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/tucnaci-a-jejich-domecky/photo-01.jpg",
+    "assets/reference-albums/tucnaci-a-jejich-domecky/photo-02.jpg",
+    "assets/reference-albums/tucnaci-a-jejich-domecky/photo-03.jpg",
+    "assets/reference-albums/tucnaci-a-jejich-domecky/photo-04.jpg",
+    "assets/reference-albums/tucnaci-a-jejich-domecky/photo-05.jpg",
+    "assets/reference-albums/tucnaci-a-jejich-domecky/photo-06.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "kasna-vsetin",
+   "sekce": "verejne",
+   "nazev": "Kašna Vsetín",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/kasna-vsetin/photo-01.jpg",
+    "assets/reference-albums/kasna-vsetin/photo-02.jpg",
+    "assets/reference-albums/kasna-vsetin/photo-03.jpg",
+    "assets/reference-albums/kasna-vsetin/photo-04.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "cistirna-odpadnich-vod-prerov",
+   "sekce": "verejne",
+   "nazev": "Čistička odpadních vod Přerov",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/cistirna-odpadnich-vod-prerov/photo-01.jpg",
+    "assets/reference-albums/cistirna-odpadnich-vod-prerov/photo-02.jpg",
+    "assets/reference-albums/cistirna-odpadnich-vod-prerov/photo-03.jpg",
+    "assets/reference-albums/cistirna-odpadnich-vod-prerov/photo-04.jpg",
+    "assets/reference-albums/cistirna-odpadnich-vod-prerov/photo-05.jpg",
+    "assets/reference-albums/cistirna-odpadnich-vod-prerov/photo-06.jpg",
+    "assets/reference-albums/cistirna-odpadnich-vod-prerov/photo-07.jpg",
+    "assets/reference-albums/cistirna-odpadnich-vod-prerov/photo-08.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "zoo-dvur-kralove",
+   "sekce": "verejne",
+   "nazev": "Vodní svět ZOO Dvůr Králové",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/zoo-dvur-kralove/photo-01.jpg",
+    "assets/reference-albums/zoo-dvur-kralove/photo-02.jpg",
+    "assets/reference-albums/zoo-dvur-kralove/photo-03.jpg",
+    "assets/reference-albums/zoo-dvur-kralove/photo-04.jpg",
+    "assets/reference-albums/zoo-dvur-kralove/photo-05.jpg",
+    "assets/reference-albums/zoo-dvur-kralove/photo-06.jpg",
+    "assets/reference-albums/zoo-dvur-kralove/photo-07.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "skola-v-ceske-skalici",
+   "sekce": "verejne",
+   "nazev": "Škola v České Skalici",
+   "popis": "",
+   "fotky": [
+    "assets/reference-albums/skola-v-ceske-skalici/photo-01.jpg",
+    "assets/reference-albums/skola-v-ceske-skalici/photo-02.jpg",
+    "assets/reference-albums/skola-v-ceske-skalici/photo-03.jpg"
+   ],
+   "skryty": false
+  },
+  {
+   "id": "kostnice-v-kutne-hore",
+   "sekce": "verejne",
+   "nazev": "Kostnice v Kutné Hoře",
+   "popis": "",
+   "fotky": [
+    "assets/references/reference-42.jpg"
+   ],
+   "skryty": false
+  }
+ ]
+}

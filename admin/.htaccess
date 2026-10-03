@@ -1,0 +1,9 @@
+# Administrace: nikdy do vyhledávačů, nikdy z cache, interní soubory nedostupné
+<IfModule mod_headers.c>
+Header always set X-Robots-Tag "noindex, nofollow, noarchive"
+Header always set Cache-Control "no-store, max-age=0"
+</IfModule>
+<FilesMatch "^(jadro|publikuj|nastav-heslo)\.php$">
+Require all denied
+</FilesMatch>
+DirectoryIndex index.php
