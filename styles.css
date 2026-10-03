@@ -359,3 +359,13 @@ a.cookie-footer-link{margin-left:auto}
 /* Přístupnost: odkaz „Přeskočit na obsah“ (viditelný jen při ovládání klávesnicí) */
 .skip-link{position:absolute;left:12px;top:-60px;z-index:100;background:#8a4b24;color:#fff;padding:10px 16px;border-radius:4px;font-weight:700;transition:top .2s}
 .skip-link:focus{top:12px}
+/* Formulář – přílohy, stavy, skryté pole proti spamu */
+.hp-pole{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.upload-pick{cursor:pointer;position:relative;transition:border-color .2s,background .2s}
+.upload-pick:hover{border-color:#b98f73;background:#fffaf4}
+.upload-pick input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+.upload-pick:focus-within{outline:2px solid #8a4b24;outline-offset:2px}
+.upload-chyba{color:#b3261e!important;font-weight:700}
+.form-status.ok{color:#2f7a3d;font-weight:700}.form-status.chyba{color:#b3261e;font-weight:700}
+.contact-form [aria-invalid="true"]{border-color:#b3261e!important;box-shadow:0 0 0 2px rgba(179,38,30,.15)}
+.contact-form button[disabled]{opacity:.6;cursor:wait}

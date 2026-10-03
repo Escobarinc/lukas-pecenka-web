@@ -272,29 +272,46 @@
   const form=document.querySelector('.contact-form');
   if(form){
     const status=form.querySelector('.form-status');
-    form.addEventListener('submit',e=>{
-      e.preventDefault();
-      const required=[...form.querySelectorAll('[required]')];
-      let valid=true;
-      required.forEach(el=>{const bad=el.type==='checkbox'?!el.checked:!el.value.trim()||(el.type==='email'&&!/^\S+@\S+\.\S+$/.test(el.value));el.setAttribute('aria-invalid',String(bad));if(bad)valid=false;});
-      if(!valid){status.textContent='Doplňte prosím povinné údaje a souhlas.';return;}
-      const data=new FormData(form);
-      const recipient=form.dataset.recipient;
+    const btn=form.querySelector('[type="submit"]');
+    const t=form.querySelector('[name="t"]'); if(t) t.value=String(Date.now());
+    const soubory=form.querySelector('input[type="file"]');
+    const info=form.querySelector('.upload-info');
+    const puvodniInfo=info?info.textContent:'';
+    if(soubory&&info) soubory.addEventListener('change',()=>{
+      const f=[...soubory.files]; const mb=f.reduce((a,x)=>a+x.size,0)/1048576;
+      info.textContent=f.length?`Vybráno: ${f.length} ${f.length===1?'soubor':f.length<5?'soubory':'souborů'} (${mb.toFixed(1)} MB)`:puvodniInfo;
+      info.classList.toggle('upload-chyba',f.length>8||mb>20);
+    });
+    const mailto=data=>{
       const subject=`Poptávka diagnostiky – ${data.get('name')}`;
-      const body=[
-        `Jméno: ${data.get('name')}`,
-        `Telefon: ${data.get('phone')}`,
-        `E-mail: ${data.get('email')}`,
-        `Lokalita: ${data.get('location')||'neuvedena'}`,
+      const body=[`Jméno: ${data.get('name')}`,`Telefon: ${data.get('phone')}`,`E-mail: ${data.get('email')}`,`Lokalita: ${data.get('location')||'neuvedena'}`,
         ...(data.has('year')?[`Rok výstavby: ${data.get('year')||'neuveden'}`,`Typ zdiva: ${data.get('construction')||'neuveden'}`,`Kde se problém projevuje: ${data.get('where')||'neuvedeno'}`]:[]),
-        '',
-        'Popis problému:',
-        data.get('message')||'neuveden',
-        '',
-        'Fotografie případně přiložím k této zprávě.'
-      ].join('\n');
+        '','Popis problému:',data.get('message')||'neuveden','','Fotografie případně přiložím k této zprávě.'].join('\n');
       status.textContent='Otevírám připravenou zprávu ve vaší e-mailové aplikaci…';
-      window.location.href=`mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href=`mailto:${form.dataset.recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    };
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();
+      let valid=true;
+      form.querySelectorAll('[required]').forEach(el=>{const bad=el.type==='checkbox'?!el.checked:!el.value.trim()||(el.type==='email'&&!/^\S+@\S+\.\S+$/.test(el.value))||(el.name==='phone'&&!/^[+0-9 ()\/-]{9,20}$/.test(el.value.trim()));el.setAttribute('aria-invalid',String(bad));if(bad)valid=false;});
+      if(!valid){status.textContent='Doplňte prosím jméno, telefon a platný e-mail.';status.className='form-status chyba';form.querySelector('[aria-invalid="true"]')?.focus();return;}
+      if(soubory&&soubory.files.length>8){status.textContent='Přiložte prosím nejvýše 8 souborů.';status.className='form-status chyba';return;}
+      const data=new FormData(form);
+      btn.disabled=true; status.className='form-status'; status.textContent='Odesílám poptávku…';
+      try{
+        const r=await fetch(form.getAttribute('action'),{method:'POST',body:data,headers:{'Accept':'application/json'}});
+        const j=await r.json().catch(()=>null);
+        if(!j) throw new Error('server bez PHP');
+        if(j.ok){
+          window.lpUdalost&&window.lpUdalost('formular_odeslan',{fotek:soubory?soubory.files.length:0});
+          form.reset(); if(t) t.value=String(Date.now()); if(info) info.textContent=puvodniInfo;
+          status.className='form-status ok'; status.textContent='Děkuji, poptávka odešla. Ozvu se vám co nejdříve.';
+        }else{
+          (j.pole||[]).forEach(n=>form.querySelector(`[name="${n}"]`)?.setAttribute('aria-invalid','true'));
+          status.className='form-status chyba'; status.textContent=j.chyba||'Zprávu se nepodařilo odeslat. Zavolejte prosím na +420 602 529 179.';
+        }
+      }catch(err){ mailto(data); }
+      finally{ btn.disabled=false; }
     });
   }
 })();

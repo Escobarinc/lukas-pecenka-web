@@ -84,3 +84,31 @@
   const ulozeno=nacti();
   if(ulozeno)pouzij(ulozeno);else otevri(false);
 })();
+
+/* ===== Měření (GA4 přes Google Tag Manager) =====
+   Při spuštění doplnit GTM_ID (např. 'GTM-ABC1234'). Dokud je prázdné, nic se od Googlu nenačítá.
+   Události jdou do dataLayer vždy – Tag Manager je pošle do GA4/Ads jen podle souhlasu (Consent Mode v2). */
+(function(){
+  const GTM_ID='';
+  window.dataLayer=window.dataLayer||[];
+  const udalost=(nazev,data)=>window.dataLayer.push(Object.assign({event:nazev},data||{}));
+  window.lpUdalost=udalost;
+  if(GTM_ID && location.hostname==='lukaspecenka.cz'){
+    window.dataLayer.push({'gtm.start':Date.now(),event:'gtm.js'});
+    const s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtm.js?id='+encodeURIComponent(GTM_ID);
+    document.head.appendChild(s);
+  }
+  document.addEventListener('click',e=>{
+    const a=e.target.closest('a,button'); if(!a)return;
+    const h=a.getAttribute('href')||'';
+    if(h.startsWith('tel:')) udalost('klik_telefon',{umisteni:a.closest('header,footer,section')?.id||document.body.dataset.current||'uvod'});
+    else if(h.startsWith('mailto:')) udalost('klik_email');
+    else if(/kontakt\.html#poptavka|#contact/.test(h)) udalost('cta_objednat_pruzkum',{text:a.textContent.trim().slice(0,40)});
+    else if(a.matches('.pruzkum-open,[data-doc]')) udalost('ukazka_pruzkumu_otevrena');
+    else if(/^https?:/.test(h) && !h.includes(location.hostname)) udalost('odchozi_odkaz',{cil:h.slice(0,100)});
+  },true);
+  document.addEventListener('focusin',e=>{
+    const f=e.target.closest('.contact-form'); if(!f||f.dataset.zahajen)return;
+    f.dataset.zahajen='1'; udalost('formular_zahajen');
+  });
+})();
