@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 _soukrome/limit/
 _soukrome/test-*.eml
+_soukrome/nastaveni.php
+_soukrome/zalohy/
