@@ -387,6 +387,9 @@ html[data-theme="dark"] .architecture-lines,html[data-theme="dark"] section#cont
 html[data-theme="dark"] .header-bar .desktop-nav a[aria-current="page"],html[data-theme="dark"] .header-inner .desktop-nav a[aria-current="page"],html[data-theme="dark"] .document-toolbar>button:hover,html[data-theme="dark"] .document-carousel-arrow:hover:not(:disabled),html[data-theme="dark"] .document-carousel-arrow:focus-visible:not(:disabled){background:#9a5a30;color:#fff}
 /* vnitřek ikon YouTube / Instagram v patičce */
 html[data-theme="dark"] .footer-social .social-play,html[data-theme="dark"] .footer-social .social-dot{fill:#2a221b}
+/* 5 kroků: ve tmě bez rámečků karet a bez dělicích čar (Milan 4. 10.) */
+html[data-theme="dark"] .step-card,html[data-theme="dark"] .step-card:hover{border-color:transparent!important;background:transparent!important;box-shadow:none!important}
+html[data-theme="dark"] .process-left,html[data-theme="dark"] .process-right{border:0!important}
 /* SVG plochy (fill = pozadí, ne text) */
 html[data-theme="dark"] .scanner-panel rect{fill:rgba(28,23,18,.92);stroke:rgba(217,167,124,.35)}
 html[data-theme="dark"] .scanner-panel text{fill:#f1e8dc}
