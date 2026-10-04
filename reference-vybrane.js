@@ -13,7 +13,7 @@ window.REFERENCE_VYBRANE = [
   { typ: "Památka", nazev: "Fara", misto: "Rakovník", rok: 2024, popis: "Vlhkostní průzkum objektu a návrh sanačních opatření.", foto: "assets/reference-pruzkumy/fara-rakovnik.jpg" },
   { typ: "Památka", nazev: "Kantorova vila", misto: "Jablonec nad Nisou", rok: 2024, popis: "Vlhkostní průzkum vily a návrh sanace.", foto: "assets/reference-pruzkumy/kantorova-vila.jpg" },
   { typ: "Veřejná budova", nazev: "Nemocnice Nymburk", misto: "Nymburk", rok: 2026, popis: "Průzkum vlhkosti svislých konstrukcí a podlah.", foto: "assets/reference-pruzkumy/nemocnice-nymburk.jpg" },
-  { typ: "Veřejná budova", nazev: "Fakultní nemocnice Hradec Králové", misto: "Hemodialyzační středisko", rok: 2023, popis: "Vlhkostní průzkum v provozu nemocnice." },
+  { typ: "Veřejná budova", nazev: "Fakultní nemocnice Hradec Králové", misto: "Hemodialyzační středisko", rok: 2023, popis: "Vlhkostní průzkum v provozu nemocnice.", foto: "assets/reference-pruzkumy/fnhk.jpg" },
   { typ: "Veřejná budova", nazev: "Národní pedagogický institut", misto: "Praha – Senovážné náměstí", rok: 2025, popis: "Vlhkostní průzkum objektu a návrh sanace.", foto: "assets/reference-pruzkumy/npi-senovazne.jpg" },
   { typ: "Veřejná budova", nazev: "ZUŠ Březnice", misto: "Březnice", rok: 2024, popis: "Vlhkostní průzkum budovy školy.", foto: "assets/reference-pruzkumy/breznice-zus.jpg" },
   { typ: "Veřejná budova", nazev: "ZUŠ Heřmanův Městec", misto: "Heřmanův Městec", rok: 2025, popis: "Průzkum vzlínající vlhkosti a stavu hydroizolace.", foto: "assets/reference-pruzkumy/zus-heramnuv.jpg" },

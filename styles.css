@@ -479,3 +479,4 @@ main p a:not(.btn):not([class]){text-decoration:underline;text-underline-offset:
 .spravce-upravy [contenteditable="true"]{outline:1px dashed rgba(208,132,74,.75);outline-offset:3px;border-radius:2px;cursor:text}
 .spravce-upravy [contenteditable="true"]:hover{outline-style:solid}
 .spravce-upravy [contenteditable="true"]:focus{outline:2px solid #d0844a;background:rgba(208,132,74,.06)}
+
