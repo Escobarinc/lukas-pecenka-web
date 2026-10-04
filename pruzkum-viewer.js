@@ -12,7 +12,7 @@
   dialog.innerHTML=`<div class="document-dialog-inner">
     <div class="document-dialog-head">
       <div><span class="eyebrow">UKÁZKA PRŮZKUMU · ZÁMEK PUKLICE</span><h2></h2></div>
-      <div class="pruzkum-head-actions"><a class="btn btn-outline pruzkum-download" download>Stáhnout PDF</a><button class="document-close" type="button" aria-label="Zavřít prohlížeč">×</button></div>
+      <div class="pruzkum-head-actions"><a class="btn btn-outline pruzkum-download" href="#" download>Stáhnout PDF</a><button class="document-close" type="button" aria-label="Zavřít prohlížeč">×</button></div>
     </div>
     <div class="document-stage" aria-live="polite"><button type="button" class="pruzkum-zoom" title="Zvětšit stranu" aria-label="Zvětšit stranu"><img alt=""></button></div>
     <div class="document-toolbar">

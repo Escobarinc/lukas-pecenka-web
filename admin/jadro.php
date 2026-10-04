@@ -114,6 +114,12 @@ function zpracujFoto(string $tmp, string $cilBezPripony): ?string {
     if (!is_dir(dirname($cilBezPripony))) mkdir(dirname($cilBezPripony), 0755, true);
     imageinterlace($cil, true);
     imagejpeg($cil, $cilBezPripony . '.jpg', 80);
+    if (max($nw, $nh) > 1000) {                 // menší verze pro mobily (srcset)
+        $k2 = 800 / max($nw, $nh); $mw = (int)round($nw * $k2); $mh = (int)round($nh * $k2);
+        $male = imagecreatetruecolor($mw, $mh); imagecopyresampled($male, $cil, 0, 0, 0, 0, $mw, $mh, $nw, $nh);
+        imageinterlace($male, true); imagejpeg($male, $cilBezPripony . '-800.jpg', 78);
+        if (function_exists('imagewebp')) { imagewebp($male, $cilBezPripony . '-800.webp', 76); if (filesize($cilBezPripony . '-800.webp') > 0.9 * filesize($cilBezPripony . '-800.jpg')) @unlink($cilBezPripony . '-800.webp'); }
+    }
     if (function_exists('imagewebp')) {
         imagewebp($cil, $cilBezPripony . '.webp', 78);
         if (filesize($cilBezPripony . '.webp') > 0.9 * filesize($cilBezPripony . '.jpg')) @unlink($cilBezPripony . '.webp');
@@ -124,10 +130,16 @@ function smazFoto(string $relCesta): void {
     $p = realpath(WEB . '/' . $relCesta);
     $assets = realpath(WEB . '/assets');
     if ($p && $assets && str_starts_with($p, $assets . DIRECTORY_SEPARATOR) && is_file($p)) {
-        @unlink($p); @unlink(preg_replace('/\.(jpe?g|png)$/i', '.webp', $p));
+        @unlink($p); @unlink(preg_replace('/\.(jpe?g|png)$/i', '.webp', $p)); @unlink(preg_replace('/\.(jpe?g|png)$/i', '-800.jpg', $p)); @unlink(preg_replace('/\.(jpe?g|png)$/i', '-800.webp', $p));
     }
 }
 
+
+/* srcset pro obrázek, pokud existuje menší verze */
+function srcset(string $src): string {
+    if (!preg_match('~^(assets/[^"?]+)\.(jpe?g)$~', $src, $m) || !is_file(WEB . '/' . $m[1] . '-800.jpg')) return '';
+    return ' srcset="' . e($m[1]) . '-800.jpg 800w, ' . e($src) . ' 1600w" sizes="(max-width: 700px) 100vw, 50vw"';
+}
 /* ---------- šablona hlavičky stránky (stejná jako na ostatních stránkách) ---------- */
 function hlavaStranky(string $titulek, string $popis, string $seoBlok): string {
     $radky = explode("\n", (string)file_get_contents(WEB . '/diagnostika.html'));
@@ -200,7 +212,7 @@ function vykresliClanek(array $c, array $vsechny): string {
         . '<body class="subpage rada-page" data-current="rady"><!--GENEROVANO-ADMINEM--><div id="site-shell" class="site-shell"><main>' . "\n"
         . '  <section class="page-hero page-hero--banner"><div class="container page-hero-grid"><div class="page-hero-copy"><nav class="rada-breadcrumb" aria-label="Drobečková navigace"><a href="pomoc-a-rady.html">Pomoc a rady</a> <span>›</span> ' . e($kat) . '</nav>'
         . '<div class="page-kicker">POMOC A RADY · ' . e(mb_strtoupper($kat)) . ' · ' . $min . ' MIN ČTENÍ</div><h1>' . e($c['nazev']) . '</h1><p class="page-lead">' . $c['uvod'] . '</p></div>'
-        . '<figure class="page-banner" data-banner="rada-' . e($c['slug']) . '"><img fetchpriority="high" src="' . e($foto) . '" alt="' . e($c['nazev']) . '" onerror="this.remove()"><figcaption>Úvodní fotka: ' . e($c['nazev']) . '</figcaption></figure></div></section>' . "\n"
+        . '<figure class="page-banner" data-banner="rada-' . e($c['slug']) . '"><img fetchpriority="high"' . srcset($foto) . ' src="' . e($foto) . '" alt="' . e($c['nazev']) . '" onerror="this.remove()"><figcaption>Úvodní fotka: ' . e($c['nazev']) . '</figcaption></figure></div></section>' . "\n"
         . '  <section class="page-section"><div class="container rada-layout"><article class="rada-text">' . "\n" . $telo . "\n"
         . '      <footer class="rada-autor"><img loading="lazy" decoding="async" src="assets/bannery/o-mne.jpg" alt="Mgr. Lukáš Pečenka, DiS." width="72" height="72"><div><strong>Mgr. Lukáš Pečenka, DiS.</strong><span>Specialista na sanační průzkumy a diagnostiku vlhkosti staveb, přes 20 let praxe, řádný člen WTA CZ.</span><small>Aktualizováno <time datetime="' . e($c['upraveno']) . '">' . datumCz($c['upraveno']) . '</time> · <a href="o-mne.html">Více o autorovi</a></small></div></footer>' . "\n"
         . '    </article>' . "\n"
@@ -212,7 +224,7 @@ function vykresliClanek(array $c, array $vsechny): string {
 
 function vykresliRozcestnik(array $clanky): string {
     $vid = array_values(array_filter($clanky, fn($c) => empty($c['skryty'])));
-    $foto = fn(string $src, string $popis, bool $lazy = true) => '<div class="mg-photo "><img ' . ($lazy ? 'loading="lazy" decoding="async" ' : 'fetchpriority="high" ') . 'src="' . e($src) . '" alt="' . e($popis) . '" onerror="this.remove()"><span>Fotka: ' . e($popis) . '</span></div>';
+    $foto = fn(string $src, string $popis, bool $lazy = true) => '<div class="mg-photo "><img ' . ($lazy ? 'loading="lazy" decoding="async" ' : 'fetchpriority="high" ') . ltrim(srcset($src)) . ' src="' . e($src) . '" alt="' . e($popis) . '" onerror="this.remove()"><span>Fotka: ' . e($popis) . '</span></div>';
     $karta = function (array $c, string $typ) use ($foto) {
         $perex = in_array($typ, ['velka', 'bok'], true) ? '<p>' . e(perex($c)) . '</p>' : '';
         return '<a class="mg-card mg-' . $typ . '" href="rada-' . e($c['slug']) . '.html" data-kat="' . e($c['kategorie']) . '">' . $foto(fotoClanku($c), $c['nazev'])
@@ -308,4 +320,25 @@ function mapaWebu(array $clanky): void {
             file_put_contents($llms, $s, LOCK_EX);
         }
     }
+}
+
+/* ---------- dvoufázové ověření (TOTP, RFC 6238 – Google Authenticator, Microsoft Authenticator…) ---------- */
+function base32Dekoduj(string $b32): string {
+    $abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567'; $b32 = strtoupper(preg_replace('/[^A-Z2-7]/i', '', $b32) ?? '');
+    $bity = ''; foreach (str_split($b32) as $z) $bity .= str_pad(decbin((int)strpos($abc, $z)), 5, '0', STR_PAD_LEFT);
+    $out = ''; foreach (str_split($bity, 8) as $b) if (strlen($b) === 8) $out .= chr(bindec($b));
+    return $out;
+}
+function totpKod(string $tajemstvi, int $krok): string {
+    $h = hash_hmac('sha1', pack('N*', 0) . pack('N*', $krok), base32Dekoduj($tajemstvi), true);
+    $o = ord($h[19]) & 0xf;
+    $c = ((ord($h[$o]) & 0x7f) << 24) | (ord($h[$o + 1]) << 16) | (ord($h[$o + 2]) << 8) | ord($h[$o + 3]);
+    return str_pad((string)($c % 1000000), 6, '0', STR_PAD_LEFT);
+}
+function totpOver(string $tajemstvi, string $kod): bool {
+    $kod = preg_replace('/\D/', '', $kod) ?? '';
+    if (strlen($kod) !== 6) return false;
+    $t = intdiv(time(), 30);
+    foreach ([-1, 0, 1] as $d) if (hash_equals(totpKod($tajemstvi, $t + $d), $kod)) return true;
+    return false;
 }

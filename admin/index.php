@@ -36,19 +36,20 @@ if (!prihlasen()) {
         $p = is_file($f) ? json_decode((string)file_get_contents($f), true) : ['n' => 0, 't' => time()];
         if (time() - $p['t'] > 900) $p = ['n' => 0, 't' => time()];
         if ($p['n'] >= POKUSU) $chyba = 'Příliš mnoho pokusů. Zkuste to znovu za 15 minut.';
-        elseif (password_verify((string)($_POST['heslo'] ?? ''), $nastaveni['heslo_hash'])) {
+        elseif (password_verify((string)($_POST['heslo'] ?? ''), $nastaveni['heslo_hash']) && (empty($nastaveni['totp']) || totpOver($nastaveni['totp'], (string)($_POST['kod'] ?? '')))) {
             @unlink($f);
             session_regenerate_id(true);
             $_SESSION['prihlasen'] = true; $_SESSION['aktivita'] = time();
             header('Location: ./'); exit;
         } else {
             $p['n']++; file_put_contents($f, json_encode($p)); usleep(800000);
-            $chyba = 'Nesprávné heslo.';
+            $chyba = 'Nesprávné heslo nebo kód.';
         }
     }
     stranka('Přihlášení', '<form method="post" class="prihlaseni"><h1>Správa webu</h1><p>Lukáš Pečenka – sanační průzkumy</p>'
         . ($chyba ? '<p class="chyba">' . e($chyba) . '</p>' : '')
         . '<input type="hidden" name="csrf" value="' . csrf() . '"><label>Heslo<input type="password" name="heslo" autocomplete="current-password" required autofocus></label>'
+        . (!empty($nastaveni['totp']) ? '<label>Kód z aplikace (6 číslic)<input name="kod" inputmode="numeric" pattern="[0-9 ]{6,7}" autocomplete="one-time-code" required></label>' : '')
         . '<button class="btn">Přihlásit se</button></form>', false);
     exit;
 }

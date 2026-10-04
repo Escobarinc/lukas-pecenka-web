@@ -369,3 +369,36 @@ a.cookie-footer-link{margin-left:auto}
 .form-status.ok{color:#2f7a3d;font-weight:700}.form-status.chyba{color:#b3261e;font-weight:700}
 .contact-form [aria-invalid="true"]{border-color:#b3261e!important;box-shadow:0 0 0 2px rgba(179,38,30,.15)}
 .contact-form button[disabled]{opacity:.6;cursor:wait}
+/* Úvodní stránka – sanační řešení a profil (4. 10.) */
+#reseni{padding:64px 0;background:#fbf8f3;border-top:1px solid #e6d9cc}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.res-card{display:block;background:#fff;border:1px solid #e3d5c6;border-radius:6px;overflow:hidden;box-shadow:0 6px 16px rgba(73,45,27,.05);transition:transform .3s,box-shadow .3s,border-color .3s}
+.res-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(73,45,27,.12);border-color:#c9a88c}
+.res-photo{aspect-ratio:16/9;overflow:hidden;background:#e7d9c7}.res-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.res-card:hover .res-photo img{transform:scale(1.05)}
+.res-body{padding:16px 20px 20px}.res-body span{font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a4b24}
+.res-body h3{margin:6px 0 6px;font-size:19px}.res-body p{margin:0;color:#4a5156;font-size:14.5px;line-height:1.55}
+.res-all{margin:24px 0 0;text-align:center}
+#profil{padding:64px 0;background:#f4ece1}
+.profil-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+.profil-foto{aspect-ratio:4/3;border-radius:6px;overflow:hidden;box-shadow:0 18px 40px rgba(45,30,18,.16)}.profil-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.profil-text h2{font-size:clamp(30px,3vw,42px);margin:8px 0 14px}.profil-text p{color:#3d4449;font-size:16px;line-height:1.65;margin:0 0 20px;max-width:560px}
+.profil-fakta{list-style:none;padding:0;margin:0 0 24px;display:flex;gap:34px;flex-wrap:wrap}.profil-fakta b{display:block;font-size:30px;color:#8a4b24;line-height:1.1}.profil-fakta span{font-size:13px;color:#4a5156}
+@media (max-width:900px){.res-grid{grid-template-columns:1fr 1fr}.profil-grid{grid-template-columns:1fr;gap:24px}}
+@media (max-width:600px){.res-grid{grid-template-columns:1fr}#reseni,#profil{padding:44px 0}}
+html[data-theme="dark"] #reseni,html[data-theme="dark"] #profil{background:#1d1813}
+html[data-theme="dark"] .res-card{background:#2a231b;border-color:#4a3a2b}html[data-theme="dark"] .res-body p,html[data-theme="dark"] .profil-text p{color:#d9cdbd}
+/* Přístupnost a kvalita (Lighthouse 4. 10.) */
+.footer-logo-frame img{object-fit:contain!important;clip-path:none!important}
+.signature-caption{color:#4f555a}
+html[data-theme="dark"] .signature-caption{color:#d4c7b8}
+main p a:not(.btn):not([class]){text-decoration:underline;text-underline-offset:3px}
+/* Tečky mapy: viditelná tečka je ::after, kolem je neviditelná plocha min. 24 px pro kliknutí prstem */
+.ref-dot{background:transparent!important;border:0!important;box-shadow:none!important;min-width:24px;min-height:24px}
+.ref-dot::after{content:"";position:absolute;left:50%;top:50%;width:var(--d,10px);height:var(--d,10px);transform:translate(-50%,-50%);border-radius:50%;background:rgba(138,75,36,.82);border:2px solid #fff;box-shadow:0 2px 6px rgba(60,30,10,.3);transition:background .2s,transform .2s;box-sizing:border-box}
+.ref-dot:hover::after,.ref-dot:focus-visible::after{background:#5f3015;transform:translate(-50%,-50%) scale(1.35)}
+.ref-dot:hover,.ref-dot:focus-visible{transform:translate(-50%,-50%)!important}
+/* Rychlost: sekce mimo obrazovku se vykreslí až při rolování */
+#aktualni,#domy,#pamatky,#verejne,#zakaznici{content-visibility:auto;contain-intrinsic-size:auto 1400px}
+#process-strip,#report,#feature-strip,#scanner,#reseni,#profil,#contact,.site-footer{content-visibility:auto;contain-intrinsic-size:auto 600px}
+#metody,#vzorky,#podlahy,.mg-list,.mg-cta,.dg-get{content-visibility:auto;contain-intrinsic-size:auto 900px}
+@media (max-width:900px){.footer-bottom .container{flex-wrap:wrap;gap:6px 16px}.cookie-footer-link{display:inline-flex;align-items:center;min-height:32px;padding:4px 0}.rada-cta-link{display:inline-block;padding:8px 0}}

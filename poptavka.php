@@ -9,7 +9,7 @@ header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 
 const PRIJEMCE = 'info@lukaspecenka.cz';
-const ODESILATEL = 'web@lukaspecenka.cz';          // schránka na stejné doméně (WEDOS to vyžaduje)
+const ODESILATEL = 'info@lukaspecenka.cz';         // schránka na stejné doméně (WEDOS to vyžaduje) – zakládá Pečenka
 const MAX_FOTEK = 8;
 const MAX_FOTKA = 8 * 1024 * 1024;                  // 8 MB na soubor
 const MAX_CELKEM = 20 * 1024 * 1024;                // 20 MB celkem
@@ -54,6 +54,7 @@ $rok = jedenRadek(pole('year', 20));
 $zdivo = jedenRadek(pole('construction', 160));
 $kde = jedenRadek(pole('where', 200));
 $zprava = pole('message', 5000);
+$zdroj = jedenRadek(pole('zdroj', 400));
 
 $chyby = [];
 if (mb_strlen($jmeno) < 2) $chyby[] = 'name';
@@ -84,7 +85,8 @@ $text = "Nová poptávka z webu lukaspecenka.cz\n\n"
     . "Jméno: $jmeno\nTelefon: $telefon\nE-mail: $email\nLokalita: " . ($lokalita ?: 'neuvedena') . "\n"
     . ($rok !== '' || $zdivo !== '' || $kde !== '' ? "Rok výstavby: " . ($rok ?: '–') . "\nTyp zdiva: " . ($zdivo ?: '–') . "\nKde se problém projevuje: " . ($kde ?: '–') . "\n" : '')
     . "\nPopis problému:\n" . ($zprava ?: 'neuveden') . "\n\n"
-    . 'Přiloženo fotografií: ' . count($prilohy) . "\nOdesláno: " . date('j. n. Y H:i') . "\n";
+    . 'Přiloženo fotografií: ' . count($prilohy) . "\nOdesláno: " . date('j. n. Y H:i') . "\n"
+    . 'Zdroj návštěvy: ' . ($zdroj !== '' ? $zdroj : 'přímý vstup / neznámý') . "\n";
 $hranice = 'lp_' . bin2hex(random_bytes(12));
 $hlavicky = 'From: =?UTF-8?B?' . base64_encode('Web lukaspecenka.cz') . '?= <' . ODESILATEL . ">\r\n"
     . 'Reply-To: ' . $email . "\r\nMIME-Version: 1.0\r\n"

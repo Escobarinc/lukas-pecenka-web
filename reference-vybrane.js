@@ -1,4 +1,4 @@
-/* Vybrané průzkumy (foto = první fotka budovy ze zprávy) jménem – jen instituce a památky. KE SCHVÁLENÍ PEČENKOU (smí se jméno objektu uvést?). */
+/* Vybrané průzkumy (foto = první fotka budovy ze zprávy) jménem – jen instituce a památky. Jména schválena Pečenkou 4. 10. 2026. */
 window.REFERENCE_VYBRANE = [
   { typ: "Památka", nazev: "Arcibiskupský palác", misto: "Praha – Hradčany", rok: 2025, popis: "Vlhkostní průzkum zdiva a návrh sanačních opatření.", foto: "assets/reference-pruzkumy/arcibiskupsky-palac.jpg" },
   { typ: "Památka", nazev: "Kostel sv. Jiří", misto: "Pomezí", rok: 2025, popis: "Průzkum vzlínající vlhkosti zdiva a stavu hydroizolace.", foto: "assets/reference-pruzkumy/kostel-sv-jiri-pomezi.jpg" },

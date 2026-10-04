@@ -20,7 +20,7 @@
   });
 
   document.querySelectorAll('.ref-map').forEach(box => {
-    box.innerHTML = '<img class="ref-map-cz" src="assets/czechia-outline.svg?v=48" alt="Mapa České republiky s místy průzkumů"><div class="ref-tip" hidden></div>';
+    box.innerHTML = '<img class="ref-map-cz" src="assets/czechia-outline.svg?v=49" alt="Mapa České republiky s místy průzkumů"><div class="ref-tip" hidden></div>';
     const tip = box.querySelector('.ref-tip');
     const show = (b, el) => {
       const detail = Object.entries(b.roky).map(([r, n]) => `${r}: ${n}`).join(' · ');
@@ -38,7 +38,7 @@
       d.setAttribute('aria-label', `${b.obec}: ${prA(b.pocet)}`);
       const k = Math.max(.5, Math.min(1, box.clientWidth / 800));
       const s = Math.round((9 + Math.sqrt(b.pocet) * 3) * k);
-      d.style.cssText = `left:${(x * 100).toFixed(2)}%;top:${(y * 100).toFixed(2)}%;width:${s}px;height:${s}px`;
+      d.style.cssText = `left:${(x * 100).toFixed(2)}%;top:${(y * 100).toFixed(2)}%;width:${Math.max(s, 24)}px;height:${Math.max(s, 24)}px;--d:${s}px`;
       d.addEventListener('mouseenter', () => show(b, d));
       d.addEventListener('focus', () => show(b, d));
       d.addEventListener('click', () => show(b, d));

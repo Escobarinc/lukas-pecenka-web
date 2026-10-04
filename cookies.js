@@ -112,3 +112,22 @@
     f.dataset.zahajen='1'; udalost('formular_zahajen');
   });
 })();
+
+/* Zdroj návštěvy pro poptávku (kampaně Google Ads / UTM) – jen v rámci návštěvy, bez cookies */
+(function(){
+  const KLICE=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid'];
+  try{
+    const q=new URLSearchParams(location.search); const z={};
+    KLICE.forEach(k=>{ if(q.get(k)) z[k]=q.get(k).slice(0,120); });
+    if(Object.keys(z).length) sessionStorage.setItem('lp-zdroj',JSON.stringify(z));
+    else if(!sessionStorage.getItem('lp-zdroj') && document.referrer && !document.referrer.includes(location.hostname))
+      sessionStorage.setItem('lp-zdroj',JSON.stringify({referrer:document.referrer.slice(0,150)}));
+  }catch(e){}
+  document.addEventListener('submit',e=>{
+    const f=e.target; if(!f.matches('.contact-form')) return;
+    let z={}; try{ z=JSON.parse(sessionStorage.getItem('lp-zdroj')||'{}'); }catch(err){}
+    let pole=f.querySelector('input[name="zdroj"]');
+    if(!pole){ pole=document.createElement('input'); pole.type='hidden'; pole.name='zdroj'; f.appendChild(pole); }
+    pole.value=Object.entries(z).map(([k,v])=>k+'='+v).join('; ');
+  },true);
+})();
