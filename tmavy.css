@@ -398,6 +398,10 @@ html[data-theme="dark"] .step-icon,html[data-theme="dark"] .step-card:hover .ste
 html[data-theme="dark"] .step-card:hover .step-icon{box-shadow:0 0 0 6px rgba(208,132,74,.06),0 0 34px rgba(208,132,74,.28)!important}
 html[data-theme="dark"] .steps::before{background:rgba(208,132,74,.45)}
 html[data-theme="dark"] .step-card:not(:last-child)::after{background:#d0844a;box-shadow:0 0 0 4px #141312}
+/* Stejný styl kroužků s ikonami / čísly na celém webu (měděný obrys + jemná záře) */
+html[data-theme="dark"] .dg-ic,html[data-theme="dark"] .dg-step-ic,html[data-theme="dark"] .mx-card i,html[data-theme="dark"] .me-num,html[data-theme="dark"] .mg-badge i,html[data-theme="dark"] .qa-badge b,html[data-theme="dark"] .timeline-step::before,html[data-theme="dark"] .reference-card::before,html[data-theme="dark"] .ref-card-top svg{background:radial-gradient(circle at 50% 30%,#221c17 0,#141210 70%)!important;border:1px solid rgba(208,132,74,.6)!important;color:#d6874a!important;box-shadow:0 0 18px rgba(208,132,74,.16)!important}
+html[data-theme="dark"] .dg-ic svg,html[data-theme="dark"] .dg-step-ic svg,html[data-theme="dark"] .ref-card-top svg{stroke:#d6874a}
+html[data-theme="dark"] .rada-text li::before{background:#d0844a;box-shadow:0 0 0 4px rgba(208,132,74,.15)}
 /* SVG plochy (fill = pozadí, ne text) */
 html[data-theme="dark"] .scanner-panel rect{fill:rgba(22,21,20,.92);stroke:rgba(208,132,74,.4)}
 html[data-theme="dark"] .scanner-panel text{fill:#f1e8dc}
