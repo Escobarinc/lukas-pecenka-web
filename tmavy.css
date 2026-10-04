@@ -378,6 +378,9 @@ html[data-theme="dark"] .steps-odkaz{background:#121211;border:1px solid #4b4540
 html[data-theme="dark"] .steps-odkaz-ic{background:#1f1e1c;color:#d38555}
 html[data-theme="dark"] .steps-odkaz-text{color:#caced0}
 html[data-theme="dark"] .steps-odkaz-text b{color:#dee0e2}
+html[data-theme="dark"] .faq-volat{background:#121211;border:1.5px solid #5b534d;color:#dee0e2}
+html[data-theme="dark"] .faq-volat-text{color:#caced0}
+html[data-theme="dark"] .faq-volat-text b{color:#d38555}
 
 /* ===== Ruční výjimky ===== */
 html[data-theme="dark"]{color-scheme:dark;--accent:#d0844a;--accent-dark:#b86f38;--ink:#f2eee9;--muted:#bdb6ae;--paper:#141414;--paper-2:#181716;--white:#161514;--line:#2c2a28;--soft:#151413;background:#0f0f0f}
@@ -438,6 +441,9 @@ html[data-theme="dark"] .contact-form input:not([type=checkbox]):not([type=file]
 html[data-theme="dark"] .contact-form input:not([type=checkbox]):not([type=file]):hover,html[data-theme="dark"] .contact-form textarea:hover,html[data-theme="dark"] .contact-form input:not([type=checkbox]):not([type=file]):focus,html[data-theme="dark"] .contact-form textarea:focus{border-color:#d0844a!important;box-shadow:0 0 0 3px rgba(208,132,74,.18)!important}
 html[data-theme="dark"] .contact-form input::placeholder,html[data-theme="dark"] .contact-form textarea::placeholder{color:#a39b93!important}
 html[data-theme="dark"] .contact-form .upload-note{border:1.5px dashed rgba(208,132,74,.45)!important;background:#161514!important}
+html[data-theme="dark"] .faq-volat{background:radial-gradient(ellipse at 0 0,rgba(208,132,74,.14),transparent 70%),#181614;border-color:rgba(208,132,74,.55);box-shadow:0 0 22px rgba(208,132,74,.12)}
+html[data-theme="dark"] .faq-volat-ic{background:#9a5a30;color:#fff}
+html[data-theme="dark"] .faq-volat-text{color:#c9c1b8}html[data-theme="dark"] .faq-volat-text b{color:#e09257}
 /* SVG plochy (fill = pozadí, ne text) */
 html[data-theme="dark"] .scanner-panel rect{fill:rgba(22,21,20,.92);stroke:rgba(208,132,74,.4)}
 html[data-theme="dark"] .scanner-panel text{fill:#f1e8dc}
