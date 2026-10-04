@@ -368,6 +368,11 @@ html[data-theme="dark"] .zasady a{color:#d38555}
 html[data-theme="dark"] .zasady-datum{color:#cbc7c4!important}
 html[data-theme="dark"] .dg-hero-side{color:#cf8a59}
 html[data-theme="dark"] .reference-album-popis{color:#d0d3d5}
+html[data-theme="dark"] .qa-intro .qa-photo{border:1px solid #443f39;background:#242220}
+html[data-theme="dark"] .steps-odkaz{background:#121211;border:1px solid #4b4540;color:#dee0e2}
+html[data-theme="dark"] .steps-odkaz-ic{background:#1f1e1c;color:#d38555}
+html[data-theme="dark"] .steps-odkaz-text{color:#caced0}
+html[data-theme="dark"] .steps-odkaz-text b{color:#dee0e2}
 
 /* ===== Ruční výjimky ===== */
 html[data-theme="dark"]{color-scheme:dark;--accent:#d0844a;--accent-dark:#b86f38;--ink:#f2eee9;--muted:#bdb6ae;--paper:#141414;--paper-2:#181716;--white:#161514;--line:#2c2a28;--soft:#151413;background:#0f0f0f}
@@ -399,9 +404,15 @@ html[data-theme="dark"] .step-card:hover .step-icon{box-shadow:0 0 0 6px rgba(20
 html[data-theme="dark"] .steps::before{background:rgba(208,132,74,.45)}
 html[data-theme="dark"] .step-card:not(:last-child)::after{background:#d0844a;box-shadow:0 0 0 4px #141312}
 /* Stejný styl kroužků s ikonami / čísly na celém webu (měděný obrys + jemná záře) */
-html[data-theme="dark"] .dg-ic,html[data-theme="dark"] .dg-step-ic,html[data-theme="dark"] .mx-card i,html[data-theme="dark"] .me-num,html[data-theme="dark"] .mg-badge i,html[data-theme="dark"] .qa-badge b,html[data-theme="dark"] .timeline-step::before,html[data-theme="dark"] .reference-card::before,html[data-theme="dark"] .ref-card-top svg{background:radial-gradient(circle at 50% 30%,#221c17 0,#141210 70%)!important;border:1px solid rgba(208,132,74,.6)!important;color:#d6874a!important;box-shadow:0 0 18px rgba(208,132,74,.16)!important}
+html[data-theme="dark"] .steps-odkaz-ic,html[data-theme="dark"] .dg-ic,html[data-theme="dark"] .dg-step-ic,html[data-theme="dark"] .mx-card i,html[data-theme="dark"] .me-num,html[data-theme="dark"] .mg-badge i,html[data-theme="dark"] .qa-badge b,html[data-theme="dark"] .timeline-step::before,html[data-theme="dark"] .reference-card::before,html[data-theme="dark"] .ref-card-top svg{background:radial-gradient(circle at 50% 30%,#221c17 0,#141210 70%)!important;border:1px solid rgba(208,132,74,.6)!important;color:#d6874a!important;box-shadow:0 0 18px rgba(208,132,74,.16)!important}
 html[data-theme="dark"] .dg-ic svg,html[data-theme="dark"] .dg-step-ic svg,html[data-theme="dark"] .ref-card-top svg{stroke:#d6874a}
 html[data-theme="dark"] .rada-text li::before{background:#d0844a;box-shadow:0 0 0 4px rgba(208,132,74,.15)}
+/* Patička: ikony kontaktů a sociálních sítí v měděném stylu */
+html[data-theme="dark"] .footer-contact-link svg{stroke:#d0844a}
+html[data-theme="dark"] .footer-social a{background:radial-gradient(circle at 50% 30%,#221c17 0,#141210 70%);border:1px solid rgba(208,132,74,.55);color:#d6874a;box-shadow:0 0 16px rgba(208,132,74,.14)}
+html[data-theme="dark"] .footer-social a:hover,html[data-theme="dark"] .footer-social a:focus-visible{background:#9a5a30;border-color:#d0844a;color:#fff;box-shadow:0 0 22px rgba(208,132,74,.3)}
+html[data-theme="dark"] .steps-odkaz-sipka{background:#9a5a30;color:#fff}
+html[data-theme="dark"] .steps-odkaz:hover{border-color:#d0844a}
 /* SVG plochy (fill = pozadí, ne text) */
 html[data-theme="dark"] .scanner-panel rect{fill:rgba(22,21,20,.92);stroke:rgba(208,132,74,.4)}
 html[data-theme="dark"] .scanner-panel text{fill:#f1e8dc}

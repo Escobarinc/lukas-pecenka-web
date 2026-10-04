@@ -443,3 +443,17 @@
 .dg-hero-side{color:#8a5a38}
 .reference-album-popis{margin:-6px 0 20px;max-width:860px;color:#3d4449;font-size:15.5px;line-height:1.65}
 
+/* Sanační průzkum – „Jak průzkum probíhá“ stejně jako 5 kroků na úvodní stránce (4. 10.) */
+.steps--podstranka{margin-top:10px}
+/* Otázky a odpovědi: fotka sekce menší, v rámečku pod popisem (4. 10.) */
+.qa-intro .qa-photo{position:relative;inset:auto;width:100%;max-width:330px;aspect-ratio:4/3;margin-top:26px;border-radius:6px;overflow:hidden;border:1px solid #e0cfbd;box-shadow:0 12px 28px rgba(73,45,27,.12);-webkit-mask-image:none;mask-image:none;opacity:1!important;background:#e7d9c7}
+.qa-intro .qa-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:900px){.qa-intro .qa-photo{max-width:none;aspect-ratio:16/9;opacity:1!important}}
+/* Odkaz na Diagnostiku pod kroky – zvýrazněný rámeček se šipkou */
+.steps-odkaz{display:flex;align-items:center;gap:16px;max-width:620px;margin:34px auto 0;padding:16px 18px 16px 16px;background:#fff;border:1px solid #d9bfa9;border-radius:6px;box-shadow:0 10px 24px rgba(73,45,27,.08);color:#1b2228;transition:transform .2s,box-shadow .2s,border-color .2s}
+.steps-odkaz:hover,.steps-odkaz:focus-visible{transform:translateY(-2px);border-color:#8a4b24;box-shadow:0 14px 30px rgba(73,45,27,.14)}
+.steps-odkaz-ic{flex:0 0 48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#f1e2d2;color:#8a4b24}
+.steps-odkaz-ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.steps-odkaz-text{flex:1;font-size:15px;line-height:1.45;color:#4a5156}.steps-odkaz-text b{display:block;font-size:17px;color:#1b2228;margin-bottom:2px}
+.steps-odkaz-sipka{flex:0 0 40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#8a4b24;color:#fff;font-size:18px;transition:transform .2s}
+.steps-odkaz:hover .steps-odkaz-sipka{transform:translateX(3px)}
