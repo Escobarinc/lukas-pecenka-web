@@ -90,7 +90,8 @@
     if (panel.dataset.ready === 'true') return;
     panel.dataset.ready = 'true';
     const images = project.images || [];
-    panel.innerHTML = `<div class="reference-album-head"><div><span>FOTOGALERIE REALIZACE</span><h3>${project.title}</h3></div><button class="reference-album-close" type="button" aria-label="Zavřít galerii">Zavřít ×</button></div><div class="reference-album-grid"></div>`;
+    panel.innerHTML = `<div class="reference-album-head"><div><span>FOTOGALERIE REALIZACE</span><h3>${project.title}</h3></div><button class="reference-album-close" type="button" aria-label="Zavřít galerii">Zavřít ×</button></div>${project.description ? '<p class="reference-album-popis"></p>' : ''}<div class="reference-album-grid"></div>`;
+    if (project.description) panel.querySelector('.reference-album-popis').textContent = project.description;
     const grid = panel.querySelector('.reference-album-grid');
     images.forEach((src, index) => {
       const button = document.createElement('button');
@@ -152,7 +153,7 @@
       const opening = panel.hidden;
       closeOtherPanels(panel);
       if (opening) {
-        buildAlbum(panel, { ...project, title });
+        buildAlbum(panel, { ...project, title, description: card.querySelector('.reference-card-description')?.textContent.trim() || '' });
         panel.hidden = false;
         card.classList.add('is-open');
         button.setAttribute('aria-expanded', 'true');
