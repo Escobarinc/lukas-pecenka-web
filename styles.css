@@ -402,3 +402,29 @@ main p a:not(.btn):not([class]){text-decoration:underline;text-underline-offset:
 #process-strip,#report,#feature-strip,#scanner,#reseni,#profil,#contact,.site-footer{content-visibility:auto;contain-intrinsic-size:auto 600px}
 #metody,#vzorky,#podlahy,.mg-list,.mg-cta,.dg-get{content-visibility:auto;contain-intrinsic-size:auto 900px}
 @media (max-width:900px){.footer-bottom .container{flex-wrap:wrap;gap:6px 16px}.cookie-footer-link{display:inline-flex;align-items:center;min-height:32px;padding:4px 0}.rada-cta-link{display:inline-block;padding:8px 0}}
+/* Plovoucí tlačítko Zavolat – jen telefony */
+.plovouci-volat{display:none}
+@media (max-width:900px){
+  .plovouci-volat{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 20px 0 16px;border-radius:26px;background:linear-gradient(180deg,#965b31,#7c3e1b);color:#fff;font-weight:700;font-size:16px;box-shadow:0 10px 24px rgba(79,40,16,.35);transition:transform .25s,opacity .25s}
+  .plovouci-volat svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .plovouci-volat.skryt{transform:translateY(90px);opacity:0;pointer-events:none}
+  body:has(.cookie-bar:not([hidden])) .plovouci-volat{opacity:0;pointer-events:none}
+  .site-footer{padding-bottom:84px}
+}
+/* Hodnocení z Googlu (data v hodnoceni.js; bez vyplnění skryté) */
+#hodnoceni{padding:64px 0;background:#fbf7f1}
+.hod-hlava{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.hod-hlava h2{margin:8px 0 0;font-size:clamp(28px,3vw,40px)}
+.hod-souhrn{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #e3d5c6;border-radius:6px;padding:12px 18px}
+.hod-souhrn b{font-size:34px;line-height:1;color:#2b2420}.hod-souhrn>span:last-child{font-size:13px;color:#4a5156}
+.hvezdy{color:#e0a106;font-size:18px;letter-spacing:2px}.hvezdy i{color:#d8cfc4;font-style:normal}
+.hod-recenze{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hod-karta{margin:0;background:#fff;border:1px solid #e3d5c6;border-radius:6px;padding:20px 22px}
+.hod-karta blockquote{margin:10px 0 12px;color:#3d4449;font-size:15px;line-height:1.6}
+.hod-karta figcaption{font-size:13px;font-weight:700;color:#8a4b24}
+.hod-akce{margin:26px 0 0;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.hod-profil{color:#8a4b24;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:900px){.hod-recenze{grid-template-columns:1fr}#hodnoceni{padding:44px 0}}
+html[data-theme="dark"] #hodnoceni{background:#1d1813}
+html[data-theme="dark"] .hod-souhrn,html[data-theme="dark"] .hod-karta{background:#2a231b;border-color:#4a3a2b}
+html[data-theme="dark"] .hod-souhrn b{color:#f3ebe0}html[data-theme="dark"] .hod-karta blockquote,html[data-theme="dark"] .hod-souhrn>span:last-child{color:#d9cdbd}

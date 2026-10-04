@@ -307,10 +307,13 @@ function mapaWebu(array $clanky): void {
         $b = basename($f);
         if (in_array($b, $vynechat, true) || str_starts_with($b, 'navrhy')) continue;
         $pri = $b === 'index.html' ? '1.0' : (str_starts_with($b, 'rada-') || $b === 'cookies.html' || str_starts_with($b, 'zasady') ? '0.6' : '0.8');
-        $url[] = '  <url><loc>' . ($b === 'index.html' ? DOMENA : DOMENA . $b) . '</loc><lastmod>' . date('Y-m-d', filemtime($f)) . '</lastmod><priority>' . $pri . '</priority></url>';
+        preg_match_all('~<img[^>]*?\ssrc="(assets/[^"?]+\.jpe?g)"~', (string)file_get_contents($f), $m);
+        $obr = array_slice(array_values(array_unique(array_filter($m[1], fn($o) => !str_contains($o, '-800.')))), 0, 20);
+        $url[] = '  <url><loc>' . ($b === 'index.html' ? DOMENA : DOMENA . $b) . '</loc><lastmod>' . date('Y-m-d', filemtime($f)) . '</lastmod><priority>' . $pri . '</priority>'
+            . implode('', array_map(fn($o) => '<image:image><image:loc>' . DOMENA . e($o) . '</image:loc></image:image>', $obr)) . '</url>';
     }
     sort($url);
-    file_put_contents(WEB . '/sitemap.xml', "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" . implode("\n", $url) . "\n</urlset>\n", LOCK_EX);
+    file_put_contents(WEB . '/sitemap.xml', "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:image=\"http://www.google.com/schemas/sitemap-image/1.1\">\n" . implode("\n", $url) . "\n</urlset>\n", LOCK_EX);
     $llms = WEB . '/llms.txt';
     if (is_file($llms)) {
         $s = (string)file_get_contents($llms);

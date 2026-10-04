@@ -226,4 +226,17 @@
       finally{ btn.disabled=false; }
     });
   }
+
+  /* Plovoucí tlačítko Zavolat (jen na mobilu; schová se u kontaktního formuláře a v patičce) */
+  const volat=document.createElement('a');
+  volat.className='plovouci-volat'; volat.href='tel:+420602529179';
+  volat.setAttribute('aria-label','Zavolat Lukáši Pečenkovi: +420 602 529 179');
+  volat.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-3 2c1.2 2.5 3 4.3 5.5 5.5l2-3 5 2v4c0 1.1-.9 2-2 2C10.5 21.5 2.5 13.5 2.5 5.5c0-1.1.9-1.5 2.5-1.5z"/></svg><span>Zavolat</span>';
+  document.body.appendChild(volat);
+  const cile=[...document.querySelectorAll('.contact-form,.site-footer,#poptavka')];
+  if('IntersectionObserver' in window && cile.length){
+    const vidim=new Set();
+    const io=new IntersectionObserver(z=>{z.forEach(x=>x.isIntersecting?vidim.add(x.target):vidim.delete(x.target));volat.classList.toggle('skryt',vidim.size>0);},{threshold:.05});
+    cile.forEach(c=>io.observe(c));
+  }
 })();
