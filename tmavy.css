@@ -381,6 +381,8 @@ html[data-theme="dark"] .steps-odkaz-text b{color:#dee0e2}
 html[data-theme="dark"] .faq-volat{background:#121211;border:1.5px solid #5b534d;color:#dee0e2}
 html[data-theme="dark"] .faq-volat-text{color:#caced0}
 html[data-theme="dark"] .faq-volat-text b{color:#d38555}
+html[data-theme="dark"] .about-portrait{background:radial-gradient(ellipse at 50% 0%,rgba(67,63,60,0.18),transparent 65%),linear-gradient(180deg,#1b1916,#121110)!important}
+html[data-theme="dark"] .about-portrait span{color:#d38b55}
 
 /* ===== Ruční výjimky ===== */
 html[data-theme="dark"]{color-scheme:dark;--accent:#d0844a;--accent-dark:#b86f38;--ink:#f2eee9;--muted:#bdb6ae;--paper:#141414;--paper-2:#181716;--white:#161514;--line:#2c2a28;--soft:#151413;background:#0f0f0f}
