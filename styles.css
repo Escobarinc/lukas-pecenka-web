@@ -457,3 +457,25 @@ main p a:not(.btn):not([class]){text-decoration:underline;text-underline-offset:
 .contact-form .upload-note{border:1.5px dashed #bb9c80!important;background:#fffaf4!important}
 .contact-form textarea{resize:none!important;overflow:hidden;max-height:none!important}
 .pata-vstup{display:inline-flex;color:inherit;cursor:default}
+/* Správa webu přímo na stránce (lišta po přihlášení přes ikonu v patičce) */
+.spravce-otevreno body{overflow:hidden}
+.spravce-okno{position:fixed;inset:0;z-index:20000;background:rgba(15,12,10,.6);display:grid;place-items:center;padding:20px}
+.spravce-panel{width:min(920px,100%);height:min(88vh,980px);background:#fff;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.spravce-hlava{display:flex;align-items:center;gap:16px;padding:12px 16px;border-bottom:1px solid #eadfd3;background:#faf6f0;color:#1b2228}
+.spravce-hlava strong{flex:1;font-size:16px}
+.spravce-zavrit{width:34px;height:34px;border-radius:50%;border:1px solid #d9bfa9;background:#fff;font-size:22px;line-height:1;cursor:pointer;color:#1b2228}
+.spravce-panel iframe{flex:1;width:100%;border:0;background:#fff}
+.spravce-lista{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:15000;display:flex;align-items:center;gap:8px;flex-wrap:wrap;max-width:calc(100% - 24px);padding:10px 12px;background:#17130f;color:#f2eee9;border:1px solid rgba(208,132,74,.5);border-radius:6px;box-shadow:0 16px 40px rgba(0,0,0,.35);font:14px/1.3 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important}
+.spravce-lista *{font-family:inherit!important}
+.spravce-lista strong{color:#d0844a;margin-right:4px}
+.spravce-stav{color:#c9c1b8;font-size:13px;margin-right:6px;min-width:0}
+.spravce-lista button,.spravce-lista a{height:34px;padding:0 12px;border-radius:4px;border:1px solid rgba(242,238,233,.3);background:transparent;color:#f2eee9;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;text-decoration:none}
+.spravce-lista button:hover:not(:disabled),.spravce-lista a:hover{border-color:#d0844a}
+.spravce-lista button:disabled{opacity:.4;cursor:default}
+.spravce-lista button.hlavni{background:linear-gradient(180deg,#b5693a,#8a4b24);border-color:#9a5a30;font-weight:700}
+.spravce-lista button.zap{background:#2a221b;border-color:#d0844a;color:#e8a06a}
+.spravce-aktivni .plovouci-volat{display:none!important}
+.spravce-aktivni body{padding-bottom:80px}
+.spravce-upravy [contenteditable="true"]{outline:1px dashed rgba(208,132,74,.75);outline-offset:3px;border-radius:2px;cursor:text}
+.spravce-upravy [contenteditable="true"]:hover{outline-style:solid}
+.spravce-upravy [contenteditable="true"]:focus{outline:2px solid #d0844a;background:rgba(208,132,74,.06)}

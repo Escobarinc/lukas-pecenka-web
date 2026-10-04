@@ -27,3 +27,8 @@ input:focus,select:focus,textarea:focus,.editor:focus{outline:2px solid #8a4b24;
 .posun{display:flex;justify-content:center;gap:4px;margin-top:4px}.posun button{border:1px solid #d5c4b2;background:#fff;border-radius:3px;cursor:pointer;padding:2px 10px}
 .prihlaseni{max-width:380px;margin:12vh auto;background:#fff;border:1px solid #e3d5c6;border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:14px}.prihlaseni p{margin:0;color:#6b5d51}
 @media (max-width:700px){.dva{grid-template-columns:1fr}td.akce{white-space:normal}th:nth-child(3),td:nth-child(3){display:none}}
+/* Vložený režim (okno na stránce Reference / Pomoc a rady) */
+body.vlozeny{background:#fff}
+body.vlozeny main{max-width:none;margin:0;padding:22px 26px}
+body.vlozeny .hlava a[href^="?a="]{display:none}
+body.vlozeny .prihlaseni{margin:40px auto;box-shadow:none}

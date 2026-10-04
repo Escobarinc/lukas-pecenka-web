@@ -19,7 +19,7 @@ RewriteRule ^index\.html$ / [R=301,L]
 
 # Interní a pracovní soubory nejsou veřejné
 RewriteRule (^|/)\. - [F,L]
-RewriteRule ^(server\.py|SPEC\.md|ASSUMPTIONS\.md|geometry\.json|assets\.json|netlify\.toml|admin\.html|admin\.css|admin-login\.js|navrhy-.*|reference-admin\.js)$ - [F,L]
+RewriteRule ^(server\.py|_lokalni-router\.php|SPEC\.md|ASSUMPTIONS\.md|geometry\.json|assets\.json|netlify\.toml|admin\.html|admin\.css|admin-login\.js|navrhy-.*|reference-admin\.js)$ - [F,L]
 RewriteRule \.(py|md|toml|sh|log|bak|sql|eml)$ - [F,L]
 RewriteRule ^_soukrome/ - [F,L]
 

@@ -170,6 +170,17 @@ html[data-theme="dark"] .hero-labels .hl-tag circle,html[data-theme="dark"] .her
 html[data-theme="dark"] .contact-form input:not([type=checkbox]):not([type=file]):not([type=hidden]),html[data-theme="dark"] .contact-form textarea{border:1.5px solid #5e5750!important;background:#121211!important}
 html[data-theme="dark"] .contact-form input::placeholder,html[data-theme="dark"] .contact-form textarea::placeholder{color:#c7c3c0!important}
 html[data-theme="dark"] .contact-form .upload-note{border:1.5px dashed #5e5750!important;background:#151413!important}
+html[data-theme="dark"] .spravce-panel{background:#121211}
+html[data-theme="dark"] .spravce-hlava{border-bottom:1px solid #3b3732;background:#171615;color:#dee0e2}
+html[data-theme="dark"] .spravce-zavrit{border:1px solid #4b4540;background:#121211;color:#dee0e2}
+html[data-theme="dark"] .spravce-panel iframe{background:#121211}
+html[data-theme="dark"] .spravce-lista{border:1px solid rgba(103,94,88,0.5)}
+html[data-theme="dark"] .spravce-lista strong{color:#d38b55}
+html[data-theme="dark"] .spravce-lista button,html[data-theme="dark"] .spravce-lista a{border:1px solid rgba(51,47,43,0.3)}
+html[data-theme="dark"] .spravce-lista button:hover:not(:disabled),html[data-theme="dark"] .spravce-lista a:hover{border-color:#675e58}
+html[data-theme="dark"] .spravce-lista button.zap{border-color:#675e58}
+html[data-theme="dark"] .spravce-upravy [contenteditable="true"]{outline:1px dashed rgba(103,94,88,0.75)}
+html[data-theme="dark"] .spravce-upravy [contenteditable="true"]:focus{outline:2px solid #675e58;background:rgba(67,63,60,0.06)}
 
 /* ===== z subpages.css ===== */
 html[data-theme="dark"] .subpage main{background:#1b1918;color:#e1e3e5}

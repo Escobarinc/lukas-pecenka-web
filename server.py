@@ -12,6 +12,12 @@ class NoCache(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+# Je-li v počítači PHP, spustí se web přes PHP – pak funguje i admin (/admin/) a formulář.
+import shutil
+if shutil.which("php") and os.environ.get("BEZ_PHP") != "1":
+    print(f"Web běží na http://localhost:{PORT}  (PHP – funguje i admin; ukončení: Ctrl+C)", flush=True)
+    os.execvp("php", ["php", "-S", f"0.0.0.0:{PORT}", "-t", ".", "_lokalni-router.php"])
 socketserver.TCPServer.allow_reuse_address = True
 try:
     srv = http.server.ThreadingHTTPServer(("", PORT), NoCache)

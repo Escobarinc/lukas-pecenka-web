@@ -14,12 +14,15 @@ header('Referrer-Policy: same-origin');
 
 const NECINNOST = 1800;          // odhlášení po 30 min nečinnosti
 const POKUSU = 5;                 // max. chybných přihlášení za 15 min z jedné adresy
+/* Vložený režim (v=1): admin otevřený v okně přímo na stránce Reference / Pomoc a rady – bez menu, po uložení stránku obnoví. */
+$V = (($_GET['v'] ?? $_POST['v'] ?? '') === '1');
 
 $nastaveni = is_file(WEB . '/_soukrome/nastaveni.php') ? require WEB . '/_soukrome/nastaveni.php' : null;
 
 function csrf(): string { if (empty($_SESSION['csrf'])) $_SESSION['csrf'] = bin2hex(random_bytes(32)); return $_SESSION['csrf']; }
 function overCsrf(): void { if (!hash_equals($_SESSION['csrf'] ?? '', (string)($_POST['csrf'] ?? ''))) { http_response_code(400); exit('Platnost formuláře vypršela. Vraťte se zpět a zkuste to znovu.'); } }
-function presmeruj(string $kam, string $zprava = ''): never { if ($zprava) $_SESSION['zprava'] = $zprava; header('Location: ?' . $kam); exit; }
+function presmeruj(string $kam, string $zprava = ''): never { global $V; if ($zprava) $_SESSION['zprava'] = $zprava; header('Location: ?' . $kam . ($V ? '&v=1' : '')); exit; }
+function hotovo(string $zprava): never { echo '<!doctype html><meta charset="utf-8"><title>Uloženo</title><body style="font:16px -apple-system,Arial,sans-serif;padding:40px;text-align:center"><p>' . e($zprava) . '</p><script>parent.postMessage({lp:"ulozeno"}, location.origin)</script></body>'; exit; }
 function prihlasen(): bool { return !empty($_SESSION['prihlasen']) && (time() - ($_SESSION['aktivita'] ?? 0)) < NECINNOST; }
 function soubPokusu(): string { $d = WEB . '/_soukrome/limit'; if (!is_dir($d)) mkdir($d, 0700, true); return $d . '/login-' . hash('sha256', ($_SERVER['REMOTE_ADDR'] ?? '') . 'lp-admin'); }
 
@@ -40,7 +43,7 @@ if (!prihlasen()) {
             @unlink($f);
             session_regenerate_id(true);
             $_SESSION['prihlasen'] = true; $_SESSION['aktivita'] = time();
-            header('Location: ./'); exit;
+            $zpet = (string)($_SERVER['REQUEST_URI'] ?? './'); header('Location: ' . (str_contains($zpet, '://') ? './' : $zpet)); exit;
         } else {
             $p['n']++; file_put_contents($f, json_encode($p)); usleep(800000);
             $chyba = empty($nastaveni['totp']) ? 'Nesprávné heslo.' : 'Nesprávné heslo nebo kód.';
@@ -97,6 +100,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
         if ($c['telo'] === '') presmeruj('a=clanek&slug=' . urlencode($c['slug']), 'Článek nemá žádný text.');
         if ($i !== false) $clanky[$i] = $c; else array_unshift($clanky, $c);
         uloz('clanky', ['clanky' => $clanky]); publikujClanky();
+        if ($V) hotovo('Článek „' . $nazev . '“ je uložený a zveřejněný.');
         presmeruj('a=clanky', 'Článek „' . $nazev . '“ je uložený a zveřejněný.');
     }
     if (in_array($co, ['clanek-skryt', 'clanek-smazat', 'clanek-nahoru', 'clanek-dolu'], true)) {
@@ -134,6 +138,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
         }
         if ($i !== false) $ref[$i] = $r; else array_unshift($ref, $r);
         uloz('reference', ['reference' => $ref]); publikujReference();
+        if ($V) hotovo('Reference „' . $nazev . '“ je uložená a zveřejněná.');
         presmeruj('a=reference', 'Reference „' . $nazev . '“ je uložená a zveřejněná.');
     }
     if (in_array($co, ['ref-skryt', 'ref-smazat', 'ref-nahoru', 'ref-dolu'], true)) {
@@ -164,10 +169,11 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
 
 /* ---------- stránky ---------- */
 function stranka(string $titulek, string $obsah, bool $menu = true): void {
+    global $V; if ($V) { $menu = false; $obsah = str_replace('<input type="hidden" name="csrf"', '<input type="hidden" name="v" value="1"><input type="hidden" name="csrf"', $obsah); }
     $zprava = $_SESSION['zprava'] ?? ''; unset($_SESSION['zprava']);
     $a = $_GET['a'] ?? 'clanky';
     echo '<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">'
-        . '<title>' . e($titulek) . ' – správa webu</title><link rel="stylesheet" href="admin.css?v=1"></head><body>'
+        . '<title>' . e($titulek) . ' – správa webu</title><link rel="stylesheet" href="admin.css?v=2"></head><body' . ($V ? ' class="vlozeny"' : '') . '>'
         . ($menu ? '<header class="lista"><strong>Správa webu</strong><nav>'
             . '<a href="?a=clanky"' . (str_starts_with($a, 'clan') ? ' class="on"' : '') . '>Články</a>'
             . '<a href="?a=reference"' . (str_starts_with($a, 'ref') ? ' class="on"' : '') . '>Reference</a>'
@@ -180,6 +186,8 @@ $tlacitko = fn(string $akce, array $skryte, string $text, string $trida = '', st
     . implode('', array_map(fn($k, $v) => '<input type="hidden" name="' . e($k) . '" value="' . e($v) . '">', array_keys($skryte), $skryte))
     . '<button class="' . $trida . '">' . $text . '</button></form>';
 
+/* přihlášení z ikony v patičce webu: po přihlášení dát vědět stránce a zavřít okno */
+if ($akce === 'prihlasen') { echo '<!doctype html><meta charset="utf-8"><title>Přihlášeno</title><body style="font:16px -apple-system,Arial,sans-serif;padding:40px;text-align:center"><p>Přihlášeno.</p><script>parent.postMessage({lp:"prihlasen"}, location.origin)</script></body>'; exit; }
 $clanky = nacti('clanky')['clanky'] ?? [];
 $ref = nacti('reference')['reference'] ?? [];
 

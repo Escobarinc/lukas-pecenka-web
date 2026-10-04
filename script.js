@@ -15,46 +15,7 @@
   themeButtons.forEach(button=>button.addEventListener('click',()=>setTheme(root.dataset.theme==='dark'?'light':'dark',true)));
 
   const editorPage=location.pathname.split('/').pop()||'index.html';
-  const editorStorageKey=`lp-content:${editorPage}`;
-  const editorSelector=[
-    '.brand-copy strong','.brand-copy small','.header-motto','main .eyebrow','main h1','main h2','main h3','main p',
-    '.trust-big','.trust-item strong','.trust-item small','.trust-note','.signature','.signature-caption',
-    '.process-feature-grid span','.feature-grid span','.check-list li','.direct-contact .contact-value','.form-title h3','.form-title p',
-    '.upload-note strong','.upload-note small','.contact-benefits h3','.footer-motto'
-  ].join(',');
-  const editableElements=[...document.querySelectorAll(editorSelector)].filter((el,index,list)=>!list.some(other=>other!==el&&other.contains(el)));
-  const originalContent={};
-  const storedContent=JSON.parse(localStorage.getItem(editorStorageKey)||'{}');
-  const legacyEmail='omitkyaodstranovanivlhkosti@gmail.com';
-  const currentEmail='info@lukaspecenka.cz';
-  let migratedStoredContent=false;
-  Object.keys(storedContent).forEach(key=>{
-    if(typeof storedContent[key]==='string'&&storedContent[key].includes(legacyEmail)){
-      storedContent[key]=storedContent[key].split(legacyEmail).join(currentEmail);
-      migratedStoredContent=true;
-    }
-  });
-  if(migratedStoredContent)localStorage.setItem(editorStorageKey,JSON.stringify(storedContent));
-
-  function safeEditableHtml(value){
-    const holder=document.createElement('div');
-    holder.innerHTML=String(value);
-    holder.querySelectorAll('script,style,iframe,object,embed,img,svg,a,button,input,textarea,form').forEach(el=>el.remove());
-    holder.querySelectorAll('*').forEach(el=>{
-      if(el.tagName==='BR')return;
-      el.replaceWith(...el.childNodes);
-    });
-    return holder.innerHTML;
-  }
-
-  editableElements.forEach((el,index)=>{
-    const id=`text-${index+1}`;
-    el.dataset.editId=id;
-    originalContent[id]=el.innerHTML;
-    if(Object.prototype.hasOwnProperty.call(storedContent,id))el.innerHTML=safeEditableHtml(storedContent[id]);
-  });
-
-  /* starý editační režim v prohlížeči odstraněn 3. 10. 2026 – správa obsahu je v /admin/ (PHP) */
+  /* Úpravy textů a přidávání obsahu přímo na webu – viz blok „Správa webu přímo na stránce“ na konci souboru. */
 
   const documentOpeners=[...document.querySelectorAll('.document-open')];
   if(documentOpeners.length||document.querySelector('.document-carousel')){
@@ -246,4 +207,106 @@
     const prizpusob=()=>{t.style.height='auto';t.style.height=Math.max(min,t.scrollHeight+2)+'px';};
     t.addEventListener('input',prizpusob);
   });
+
+  /* ===== Správa webu přímo na stránce =====
+     Vstup: ikona špendlíku v patičce → heslo (okno s /admin/) → lišta dole.
+     Texty se upravují kliknutím, „Uložit“ je zapíše na server (admin/api.php, záloha předchozí verze).
+     Reference a články se přidávají / upravují formulářem adminu v okně. */
+  (()=>{
+    const KLIC='lp-sprava';
+    const tlacPopis={'reference.html':[['reference-upravit','+ Přidat referenci'],['reference','Upravit reference']],'pomoc-a-rady.html':[['clanek','+ Přidat článek'],['clanky','Upravit články']]};
+    const jeClanek=/^rada-.+\.html$/.test(editorPage);
+    const generovana=jeClanek||editorPage==='pomoc-a-rady.html'||editorPage==='404.html';
+    const vyber='main h1,main h2,main h3,main h4,main p,main li,main .eyebrow,main .page-kicker,main figcaption,main .trust-item strong,main .trust-item small';
+    const vynech='form,nav,button,a,.reference-card,.reference-album,.ref-featured,.ref-map,.document-carousel,.document-dialog,.czech-map,.hod-recenze,.hod-souhrn,.cookie-bar,.spravce-lista,script,svg';
+    // původní texty zachytit hned (než je jiné skripty přepíšou)
+    const kandidati=[...document.querySelectorAll(vyber)].filter(el=>!el.closest(vynech)&&el.textContent.trim()&&!el.querySelector('img,svg,iframe,input,a,button,[data-ref]'))
+      .filter((el,i,l)=>!l.some(o=>o!==el&&o.contains(el)));
+    const puvodni=new Map(kandidati.map(el=>[el,el.innerHTML]));
+    let csrf='',okno=null,lista=null,upravy=false;const upravene=new Set();
+
+    const otevriOkno=(url,titulek)=>{
+      zavriOkno();
+      okno=document.createElement('div');okno.className='spravce-okno';
+      okno.innerHTML='<div class="spravce-panel" role="dialog" aria-modal="true" aria-label="'+titulek+'"><div class="spravce-hlava"><strong>'+titulek+'</strong><button type="button" class="spravce-zavrit" aria-label="Zavřít">×</button></div><iframe src="'+url+'" title="'+titulek+'"></iframe></div>';
+      document.body.appendChild(okno);document.documentElement.classList.add('spravce-otevreno');
+      okno.querySelector('.spravce-zavrit').addEventListener('click',zavriOkno);
+      okno.addEventListener('click',e=>{if(e.target===okno)zavriOkno();});
+    };
+    function zavriOkno(){okno?.remove();okno=null;document.documentElement.classList.remove('spravce-otevreno');}
+    const zmenene=()=>[...upravene].filter(el=>el.innerHTML!==puvodni.get(el));
+    const stav=t=>{const s=lista?.querySelector('.spravce-stav');if(s)s.textContent=t;};
+    const obnovTlacitka=()=>{if(!lista)return;const n=zmenene().length;lista.querySelector('[data-a="ulozit"]').disabled=!n;lista.querySelector('[data-a="zahodit"]').disabled=!n;if(n)stav(n+' '+(n===1?'změna':n<5?'změny':'změn')+' – neuloženo');};
+    const prepniUpravy=zap=>{
+      upravy=zap;document.documentElement.classList.toggle('spravce-upravy',zap);
+      kandidati.forEach(el=>{if(zap){el.contentEditable='true';el.spellcheck=true;}else el.removeAttribute('contenteditable');});
+      const t=lista?.querySelector('[data-a="texty"]');if(t){t.textContent=zap?'Hotovo s úpravami':'Upravit texty';t.classList.toggle('zap',zap);}
+      if(zap)stav('Klikněte do textu a pište. Nakonec „Uložit“.');
+    };
+    const ukazListu=()=>{
+      if(lista)return;
+      lista=document.createElement('div');lista.className='spravce-lista';lista.setAttribute('role','toolbar');lista.setAttribute('aria-label','Správa webu');
+      let h='<strong>Správa webu</strong><span class="spravce-stav"></span>';
+      if(!generovana&&kandidati.length)h+='<button type="button" data-a="texty">Upravit texty</button>';
+      (tlacPopis[editorPage]||[]).forEach(([a,t])=>{h+='<button type="button" data-okno="admin/?a='+a+'&v=1">'+t+'</button>';});
+      if(jeClanek)h+='<button type="button" data-okno="admin/?a=clanek&slug='+encodeURIComponent(editorPage.replace(/^rada-|\.html$/g,''))+'&v=1">Upravit tento článek</button>';
+      if(!generovana&&kandidati.length)h+='<button type="button" data-a="zahodit" disabled>Zahodit</button><button type="button" class="hlavni" data-a="ulozit" disabled>Uložit</button>';
+      h+='<a href="admin/" target="_blank" rel="noopener">Celá správa ↗</a><button type="button" data-a="odhlasit">Odhlásit</button>';
+      lista.innerHTML=h;document.body.appendChild(lista);document.documentElement.classList.add('spravce-aktivni');
+      if(generovana)stav(jeClanek?'Text článku upravíte tlačítkem „Upravit tento článek“.':'Články přidáte a upravíte tlačítky vpravo.');
+      lista.addEventListener('click',async e=>{
+        const b=e.target.closest('button');if(!b)return;
+        if(b.dataset.okno)return otevriOkno(b.dataset.okno,b.textContent.replace(/^\+ /,''));
+        const a=b.dataset.a;
+        if(a==='texty')prepniUpravy(!upravy);
+        if(a==='zahodit'&&confirm('Zahodit neuložené změny textů?')){upravene.forEach(el=>{el.innerHTML=puvodni.get(el);});upravene.clear();obnovTlacitka();stav('Změny zahozeny.');}
+        if(a==='ulozit')ulozit();
+        if(a==='odhlasit'){if(zmenene().length&&!confirm('Máte neuložené změny. Opravdu odhlásit?'))return;try{sessionStorage.removeItem(KLIC);}catch(_){}location.href='admin/?a=odhlasit';}
+      });
+      if(!generovana&&kandidati.length)stav('Přihlášeno. Texty upravíte tlačítkem „Upravit texty“.');
+    };
+    async function ulozit(){
+      const zm=zmenene();if(!zm.length)return;
+      const btn=lista.querySelector('[data-a="ulozit"]');btn.disabled=true;stav('Ukládám…');
+      try{
+        const r=await fetch('admin/api.php',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-CSRF':csrf},
+          body:JSON.stringify({akce:'texty',stranka:editorPage,zmeny:zm.map(el=>({tag:el.tagName.toLowerCase(),puvodni:puvodni.get(el),nova:el.innerHTML}))})});
+        const d=await r.json().catch(()=>({chyba:'Server neodpověděl správně.'}));
+        if(!r.ok||!d.ok){stav(d.chyba||'Uložení se nepovedlo.');btn.disabled=false;if(d.nenalezeno?.length)alert('Tyto texty se nepodařilo uložit (zkontrolujte je v celé správě):\n\n– '+d.nenalezeno.join('\n– '));return;}
+        zm.forEach(el=>puvodni.set(el,el.innerHTML));
+        stav('Uloženo ('+d.ulozeno+') ✓'+(d.nenalezeno?.length?' – '+d.nenalezeno.length+' se nepodařilo':''));
+        if(d.nenalezeno?.length)alert('Uloženo, ale tyto texty se nepodařilo spárovat a zůstaly původní:\n\n– '+d.nenalezeno.join('\n– '));
+        obnovTlacitka();
+      }catch(_){stav('Uložení se nepovedlo – zkontrolujte připojení.');btn.disabled=false;}
+    }
+    document.addEventListener('input',e=>{const el=e.target.closest&&e.target.closest('[contenteditable="true"]');if(upravy&&el&&kandidati.includes(el)){upravene.add(el);obnovTlacitka();}});
+    document.addEventListener('keydown',e=>{
+      if(e.key==='Escape'&&okno)zavriOkno();
+      if(upravy&&e.key==='Enter'&&e.target.isContentEditable&&!e.shiftKey){e.preventDefault();} // Enter nevytváří nové odstavce
+      if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='s'&&lista&&zmenene().length){e.preventDefault();ulozit();}
+    });
+    document.addEventListener('paste',e=>{if(upravy&&e.target.isContentEditable){e.preventDefault();document.execCommand('insertText',false,(e.clipboardData||window.clipboardData).getData('text/plain'));}});
+    window.addEventListener('beforeunload',e=>{if(zmenene().length){e.preventDefault();e.returnValue='';}});
+    window.addEventListener('message',e=>{
+      if(e.origin!==location.origin||!e.data)return;
+      if(e.data.lp==='prihlasen'){zavriOkno();try{sessionStorage.setItem(KLIC,'1');}catch(_){}overStav();}
+      if(e.data.lp==='ulozeno'){setTimeout(()=>location.reload(),900);}
+    });
+    async function overStav(){
+      try{const r=await fetch('admin/api.php?stav',{credentials:'same-origin',cache:'no-store'});const d=await r.json();
+        if(d.prihlasen){csrf=d.csrf;ukazListu();return true;}
+      }catch(_){}
+      try{sessionStorage.removeItem(KLIC);}catch(_){}
+      return false;
+    }
+    // vstup: ikona špendlíku v patičce (patička podstránek vzniká skriptem – proto delegace)
+    document.addEventListener('click',async e=>{
+      const v=e.target.closest('.pata-vstup');if(!v)return;
+      e.preventDefault();
+      if(await overStav())return lista?.scrollIntoView?.({block:'end'});
+      otevriOkno('admin/?a=prihlasen&v=1','Přihlášení do správy webu');
+    });
+    let jeSprava=false;try{jeSprava=sessionStorage.getItem(KLIC)==='1';}catch(_){}
+    if(jeSprava)overStav();
+  })();
 })();
