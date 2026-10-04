@@ -455,3 +455,4 @@ main p a:not(.btn):not([class]){text-decoration:underline;text-underline-offset:
 .contact-form input:not([type=checkbox]):not([type=file]):focus,.contact-form textarea:focus{border-color:#8a4b24!important;box-shadow:0 0 0 3px rgba(138,75,36,.16)!important}
 .contact-form input::placeholder,.contact-form textarea::placeholder{color:#6f6862!important}
 .contact-form .upload-note{border:1.5px dashed #bb9c80!important;background:#fffaf4!important}
+.contact-form textarea{resize:none!important;overflow:hidden;max-height:none!important}

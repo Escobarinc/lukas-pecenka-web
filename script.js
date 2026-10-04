@@ -239,4 +239,11 @@
     const io=new IntersectionObserver(z=>{z.forEach(x=>x.isIntersecting?vidim.add(x.target):vidim.delete(x.target));volat.classList.toggle('skryt',vidim.size>0);},{threshold:.05});
     cile.forEach(c=>io.observe(c));
   }
+
+  /* Popis problému: bez ručního roztahování, výška roste automaticky s textem */
+  document.querySelectorAll('.contact-form textarea').forEach(t=>{
+    const min=t.offsetHeight||0;
+    const prizpusob=()=>{t.style.height='auto';t.style.height=Math.max(min,t.scrollHeight+2)+'px';};
+    t.addEventListener('input',prizpusob);
+  });
 })();
