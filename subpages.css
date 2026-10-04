@@ -473,3 +473,7 @@
 .about-portrait img{width:min(100%,260px);filter:none}
 .about-portrait strong{color:var(--ink)}
 .about-portrait span{color:var(--accent)}
+/* Úvod podstránek s fotkou: nadpis se musí vejít do svého sloupce (dlouhá slova jako „technologie“) */
+.page-hero--banner h1{font-size:clamp(38px,4.5vw,68px)!important;overflow-wrap:break-word;hyphens:manual}
+/* Sanační technologie – úvod: text a fotka se nesmí překrývat, nadpis se vejde */
+@media (min-width:901px){.me-hero-photo{width:50%}.me-hero-copy{max-width:min(560px,44vw)}.me-hero h1{font-size:clamp(36px,3.9vw,58px)}}
