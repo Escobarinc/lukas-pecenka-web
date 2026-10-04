@@ -457,3 +457,5 @@
 .steps-odkaz-text{flex:1;font-size:15px;line-height:1.45;color:#4a5156}.steps-odkaz-text b{display:block;font-size:17px;color:#1b2228;margin-bottom:2px}
 .steps-odkaz-sipka{flex:0 0 40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#8a4b24;color:#fff;font-size:18px;transition:transform .2s}
 .steps-odkaz:hover .steps-odkaz-sipka{transform:translateX(3px)}
+/* Úvodní fotka podstránky se přizpůsobí výšce textu (fotka na výšku nesmí úvod roztáhnout) */
+@media (min-width:701px){.survey-hero-visual{position:relative;min-height:380px}.survey-hero-visual img{position:absolute;inset:0;object-position:center 40%}}

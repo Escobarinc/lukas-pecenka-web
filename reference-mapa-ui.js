@@ -19,6 +19,20 @@
     e.innerHTML = roky.map(r => `<div><b>${D.po_letech[r]}</b><span>${r}</span></div>`).join('');
   });
 
+  /* Malá mapa „Jezdím po celé ČR“ (kontakt): jen body průzkumů, bez popisků */
+  document.querySelectorAll('.czech-map-visual').forEach(box => {
+    if (box.querySelector('.cm-dot')) return;
+    const pin = box.querySelector('.map-location-pin');
+    [...D.body].sort((a, b) => b.pocet - a.pocet).forEach(b => {
+      const [x, y] = pos(b.lat, b.lon);
+      const d = document.createElement('span');
+      d.className = 'cm-dot'; d.setAttribute('aria-hidden', 'true');
+      const s = Math.min(14, Math.round(3 + Math.sqrt(b.pocet) * 1.1));
+      d.style.cssText = `left:${(x * 100).toFixed(2)}%;top:${(y * 100).toFixed(2)}%;width:${s}px;height:${s}px`;
+      box.insertBefore(d, pin);
+    });
+  });
+
   document.querySelectorAll('.ref-map').forEach(box => {
     box.innerHTML = '<img class="ref-map-cz" src="assets/czechia-outline.svg?v=49" alt="Mapa České republiky s místy průzkumů"><div class="ref-tip" hidden></div>';
     const tip = box.querySelector('.ref-tip');

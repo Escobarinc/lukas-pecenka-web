@@ -165,6 +165,11 @@ html[data-theme="dark"] .hod-karta{background:#121211;border:1px solid #403c37}
 html[data-theme="dark"] .hod-karta blockquote{color:#d0d3d5}
 html[data-theme="dark"] .hod-karta figcaption{color:#d38555}
 html[data-theme="dark"] .hod-profil{color:#d38555}
+html[data-theme="dark"] .hero-labels .hl-bg{fill:rgba(233,232,230,0.72);stroke:rgba(39,38,37,0.18)}
+html[data-theme="dark"] .hero-labels .hl-tag circle,html[data-theme="dark"] .hero-labels .hl-tag polyline{stroke:#272625!important}
+html[data-theme="dark"] .contact-form input:not([type=checkbox]):not([type=file]):not([type=hidden]),html[data-theme="dark"] .contact-form textarea{border:1.5px solid #5e5750!important;background:#121211!important}
+html[data-theme="dark"] .contact-form input::placeholder,html[data-theme="dark"] .contact-form textarea::placeholder{color:#c7c3c0!important}
+html[data-theme="dark"] .contact-form .upload-note{border:1.5px dashed #5e5750!important;background:#151413!important}
 
 /* ===== z subpages.css ===== */
 html[data-theme="dark"] .subpage main{background:#1b1918;color:#e1e3e5}
@@ -384,7 +389,7 @@ html[data-theme="dark"] .theme-sun{display:block}
 html[data-theme="dark"] .theme-toggle{background:#1a1816;border-color:rgba(208,132,74,.55);color:#d0844a}
 html[data-theme="dark"] .theme-toggle:hover{background:#221e1a;border-color:#d0844a}
 html[data-theme="dark"] img:not([src*="logo"]):not([src*=".svg"]){filter:brightness(.92)}
-html[data-theme="dark"] .trust-cr{filter:invert(.85) sepia(.4)}
+html[data-theme="dark"] .trust-cr{filter:brightness(0) saturate(100%) invert(62%) sepia(46%) saturate(640%) hue-rotate(338deg) brightness(92%) contrast(88%)}
 html[data-theme="dark"] ::selection{background:#8a5a37;color:#fff}
 /* dekorativní čárové textury po stranách sekcí – ve tmě by svítily jako fleky */
 html[data-theme="dark"] section#contact::before,html[data-theme="dark"] section#contact::after,html[data-theme="dark"] .contact-intro::after{opacity:0!important}
@@ -422,6 +427,17 @@ html[data-theme="dark"] .qa-cta .btn-primary,html[data-theme="dark"] .mg-cta .bt
 html[data-theme="dark"] .qa-cta .btn-outline,html[data-theme="dark"] .mg-cta .btn-outline{background:transparent;color:#f2eee9;border-color:rgba(242,238,233,.4)}
 html[data-theme="dark"] .qa-cta .btn-outline:hover,html[data-theme="dark"] .mg-cta .btn-outline:hover{border-color:#d0844a;color:#fff}
 html[data-theme="dark"] .qa-cta-photo{opacity:.85}
+/* popisky na fotce: bílé čáry a text na tmavém štítku i ve tmě */
+html[data-theme="dark"] .hero-labels .hl-tag circle,html[data-theme="dark"] .hero-labels .hl-tag polyline{stroke:#fff!important}
+html[data-theme="dark"] .hero-labels .hl-tag text{fill:#fff!important}
+html[data-theme="dark"] .hero-labels .hl-tag .hl-big,html[data-theme="dark"] .hero-labels .hl-tag .hl-dot{fill:#e8a06a!important}
+html[data-theme="dark"] .hero-labels .hl-bg{fill:rgba(16,14,12,.72)}
+html[data-theme="dark"] .czech-map-visual .cm-dot{background:rgba(208,132,74,.8);box-shadow:0 0 6px rgba(208,132,74,.45)}
+/* Formulář ve tmě: výrazná políčka */
+html[data-theme="dark"] .contact-form input:not([type=checkbox]):not([type=file]):not([type=hidden]),html[data-theme="dark"] .contact-form textarea{border:1.5px solid rgba(208,132,74,.45)!important;background:#1a1816!important;color:#f2eee9!important;box-shadow:none}
+html[data-theme="dark"] .contact-form input:not([type=checkbox]):not([type=file]):hover,html[data-theme="dark"] .contact-form textarea:hover,html[data-theme="dark"] .contact-form input:not([type=checkbox]):not([type=file]):focus,html[data-theme="dark"] .contact-form textarea:focus{border-color:#d0844a!important;box-shadow:0 0 0 3px rgba(208,132,74,.18)!important}
+html[data-theme="dark"] .contact-form input::placeholder,html[data-theme="dark"] .contact-form textarea::placeholder{color:#a39b93!important}
+html[data-theme="dark"] .contact-form .upload-note{border:1.5px dashed rgba(208,132,74,.45)!important;background:#161514!important}
 /* SVG plochy (fill = pozadí, ne text) */
 html[data-theme="dark"] .scanner-panel rect{fill:rgba(22,21,20,.92);stroke:rgba(208,132,74,.4)}
 html[data-theme="dark"] .scanner-panel text{fill:#f1e8dc}

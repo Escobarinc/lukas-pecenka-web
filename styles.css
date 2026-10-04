@@ -428,3 +428,30 @@ main p a:not(.btn):not([class]){text-decoration:underline;text-underline-offset:
 
 
 
+/* Popisky na fotce v úvodu: tmavý štítek pod textem, aby byly čitelné na pestré zdi (stejné v obou režimech, 4. 10.) */
+.hero-labels .hl-bg{fill:rgba(16,14,12,.72);stroke:rgba(255,255,255,.18);stroke-width:1.5}
+.hero-labels .hl-tag text{fill:#fff!important;stroke:none!important}
+.hero-labels .hl-tag .hl-big{fill:#e8a06a!important}
+.hero-labels .hl-tag circle,.hero-labels .hl-tag polyline{stroke:#fff!important;stroke-width:3.5;filter:drop-shadow(0 0 3px rgba(0,0,0,.75))}
+.hero-labels .hl-tag .hl-dot{fill:#e8a06a!important;stroke:none!important}
+/* Pás pod úvodem: 4 položky rovnoměrně, o něco větší, motto úplně vpravo (4. 10.) */
+@media (min-width:1181px){
+  section#trust-strip{height:78px}
+  .trust-grid{grid-template-columns:repeat(4,minmax(0,1fr)) auto;column-gap:24px}
+  .trust-item{gap:13px}
+  .trust-item svg,.trust-cr{width:40px;height:40px}.trust-cr{flex:0 0 58px;width:58px;height:auto}
+  .trust-item strong{font-size:15px}
+  .trust-item small{font-size:12px;margin-top:3px}
+  .trust-big{font-size:29px}
+  .trust-note{justify-self:end;font-size:9px}
+}
+@media (min-width:1181px){.trust-item small{white-space:nowrap}}
+/* Body průzkumů v malé mapě ČR (kontakt) */
+.czech-map-visual .cm-dot{position:absolute;transform:translate(-50%,-50%);border-radius:50%;background:rgba(138,75,36,.72);box-shadow:0 0 0 1px rgba(255,255,255,.7);pointer-events:none}
+.czech-map-visual .map-location-pin{z-index:2}
+/* Formulář: výraznější políčka (4. 10.) */
+.contact-form input:not([type=checkbox]):not([type=file]):not([type=hidden]),.contact-form textarea{border:1.5px solid #bb9c80!important;background:#fff!important;box-shadow:inset 0 1px 2px rgba(73,45,27,.06)}
+.contact-form input:not([type=checkbox]):not([type=file]):hover,.contact-form textarea:hover{border-color:#8a4b24!important}
+.contact-form input:not([type=checkbox]):not([type=file]):focus,.contact-form textarea:focus{border-color:#8a4b24!important;box-shadow:0 0 0 3px rgba(138,75,36,.16)!important}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:#6f6862!important}
+.contact-form .upload-note{border:1.5px dashed #bb9c80!important;background:#fffaf4!important}
