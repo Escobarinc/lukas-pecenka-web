@@ -413,6 +413,15 @@ html[data-theme="dark"] .footer-social a{background:radial-gradient(circle at 50
 html[data-theme="dark"] .footer-social a:hover,html[data-theme="dark"] .footer-social a:focus-visible{background:#9a5a30;border-color:#d0844a;color:#fff;box-shadow:0 0 22px rgba(208,132,74,.3)}
 html[data-theme="dark"] .steps-odkaz-sipka{background:#9a5a30;color:#fff}
 html[data-theme="dark"] .steps-odkaz:hover{border-color:#d0844a}
+/* Pásy s výzvou na konci stránek: tmavé s měděnou září místo plné mědi (Milan 4. 10.) */
+html[data-theme="dark"] .qa-cta,html[data-theme="dark"] .mg-cta,html[data-theme="dark"] .page-cta{background:radial-gradient(ellipse at 12% 0%,rgba(208,132,74,.2),transparent 60%),linear-gradient(180deg,#181614,#121110)!important;color:#f2eee9}
+html[data-theme="dark"] .qa-cta .page-kicker,html[data-theme="dark"] .mg-cta .page-kicker,html[data-theme="dark"] .page-cta .page-kicker{color:#d0844a}
+html[data-theme="dark"] .qa-cta h2,html[data-theme="dark"] .mg-cta h2,html[data-theme="dark"] .page-cta h2{color:#f2eee9}
+html[data-theme="dark"] .qa-cta p,html[data-theme="dark"] .mg-cta p,html[data-theme="dark"] .page-cta p{color:#c9c1b8}
+html[data-theme="dark"] .qa-cta .btn-primary,html[data-theme="dark"] .mg-cta .btn-primary,html[data-theme="dark"] .page-cta .btn-outline{background:linear-gradient(180deg,#b5693a,#8a4b24);color:#fff;border-color:#9a5a30;box-shadow:0 8px 22px rgba(208,132,74,.22)}
+html[data-theme="dark"] .qa-cta .btn-outline,html[data-theme="dark"] .mg-cta .btn-outline{background:transparent;color:#f2eee9;border-color:rgba(242,238,233,.4)}
+html[data-theme="dark"] .qa-cta .btn-outline:hover,html[data-theme="dark"] .mg-cta .btn-outline:hover{border-color:#d0844a;color:#fff}
+html[data-theme="dark"] .qa-cta-photo{opacity:.85}
 /* SVG plochy (fill = pozadí, ne text) */
 html[data-theme="dark"] .scanner-panel rect{fill:rgba(22,21,20,.92);stroke:rgba(208,132,74,.4)}
 html[data-theme="dark"] .scanner-panel text{fill:#f1e8dc}
