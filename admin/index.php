@@ -43,7 +43,7 @@ if (!prihlasen()) {
             header('Location: ./'); exit;
         } else {
             $p['n']++; file_put_contents($f, json_encode($p)); usleep(800000);
-            $chyba = 'Nesprávné heslo nebo kód.';
+            $chyba = empty($nastaveni['totp']) ? 'Nesprávné heslo.' : 'Nesprávné heslo nebo kód.';
         }
     }
     stranka('Přihlášení', '<form method="post" class="prihlaseni"><h1>Správa webu</h1><p>Lukáš Pečenka – sanační průzkumy</p>'
