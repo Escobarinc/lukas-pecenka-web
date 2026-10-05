@@ -284,6 +284,21 @@ function publikujReference(): array {
     return ['referenci' => count($alba)];
 }
 
+
+/* ---------- IndexNow: po změně obsahu dát hned vědět Bingu, Seznamu a dalším vyhledávačům ----------
+   Jen na ostré doméně a jen když web není zakázaný pro vyhledávače. Selhání nic neblokuje. */
+const INDEXNOW_KLIC = 'fbadd912798410c7815472bd846a9082';
+function indexNow(array $cesty): void {
+    $host = strtolower(preg_replace('/:\d+$/', '', (string)($_SERVER['HTTP_HOST'] ?? '')));
+    if (!in_array($host, ['lukaspecenka.cz', 'www.lukaspecenka.cz'], true)) return;
+    $robots = (string)@file_get_contents(WEB . '/robots.txt');
+    if (preg_match('~^Disallow:\s*/\s*$~m', $robots)) return;
+    $data = json_encode(['host' => 'lukaspecenka.cz', 'key' => INDEXNOW_KLIC, 'keyLocation' => 'https://lukaspecenka.cz/' . INDEXNOW_KLIC . '.txt',
+        'urlList' => array_values(array_map(fn($c) => 'https://lukaspecenka.cz/' . ltrim($c, '/'), $cesty))]);
+    $ctx = stream_context_create(['http' => ['method' => 'POST', 'header' => "Content-Type: application/json; charset=utf-8\r\n", 'content' => $data, 'timeout' => 4, 'ignore_errors' => true]]);
+    foreach (['https://api.indexnow.org/indexnow', 'https://search.seznam.cz/indexnow'] as $cil) @file_get_contents($cil, false, $ctx);
+}
+
 /* ---------- zveřejnění ---------- */
 function publikujClanky(): array {
     $clanky = nacti('clanky')['clanky'] ?? [];

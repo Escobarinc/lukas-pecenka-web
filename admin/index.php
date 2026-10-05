@@ -100,6 +100,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
         if ($c['telo'] === '') presmeruj('a=clanek&slug=' . urlencode($c['slug']), 'Článek nemá žádný text.');
         if ($i !== false) $clanky[$i] = $c; else array_unshift($clanky, $c);
         uloz('clanky', ['clanky' => $clanky]); publikujClanky();
+        indexNow(['rada-' . $c['slug'] . '.html', 'pomoc-a-rady.html']);
         if ($V) hotovo('Článek „' . $nazev . '“ je uložený a zveřejněný.');
         presmeruj('a=clanky', 'Článek „' . $nazev . '“ je uložený a zveřejněný.');
     }
@@ -138,6 +139,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
         }
         if ($i !== false) $ref[$i] = $r; else array_unshift($ref, $r);
         uloz('reference', ['reference' => $ref]); publikujReference();
+        indexNow(['reference.html']);
         if ($V) hotovo('Reference „' . $nazev . '“ je uložená a zveřejněná.');
         presmeruj('a=reference', 'Reference „' . $nazev . '“ je uložená a zveřejněná.');
     }

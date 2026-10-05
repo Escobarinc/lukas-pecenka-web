@@ -1,4 +1,5 @@
 # ===== lukaspecenka.cz – nastavení serveru (Apache / WEDOS) =====
+AddType application/manifest+json .webmanifest
 Options -Indexes
 ServerSignature Off
 AddDefaultCharset UTF-8

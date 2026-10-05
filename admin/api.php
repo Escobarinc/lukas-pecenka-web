@@ -73,4 +73,5 @@ $adr = ZALOHY . '/stranky';
 if (!is_dir($adr)) mkdir($adr, 0700, true);
 file_put_contents($adr . '/' . basename($stranka, '.html') . '-' . date('Ymd-His') . '.html', $puvodniObsah);
 file_put_contents($soubor, $obsah, LOCK_EX);
+indexNow([$stranka === 'index.html' ? '' : $stranka]);
 odpoved(['ok' => true, 'ulozeno' => $hotovo, 'nenalezeno' => $nenalezeno]);
