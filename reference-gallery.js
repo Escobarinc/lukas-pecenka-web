@@ -131,7 +131,12 @@
     image.alt = title;
     image.decoding = 'async';
     image.loading = options.eager ? 'eager' : 'lazy';
-    if (cover) image.src = cover;
+    // na kartě malý náhled (-800.jpg), plná fotka až v otevřeném albu; když náhled chybí, použije se originál
+    if (cover) {
+      const nahled = /^assets\/reference-albums\/.+\.(jpe?g|png)$/i.test(cover) && !/-800\.jpg$/i.test(cover) ? cover.replace(/\.(jpe?g|png)$/i, '-800.jpg') : cover;
+      image.src = nahled;
+      if (nahled !== cover) image.addEventListener('error', () => { image.src = cover; }, { once: true });
+    }
     figure.append(image);
     card.prepend(figure);
 
