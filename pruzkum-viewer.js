@@ -29,7 +29,7 @@
   const title=dialog.querySelector('.document-page-meta strong'),counter=dialog.querySelector('.document-page-meta span');
   const thumbs=dialog.querySelector('.pruzkum-thumbs'),download=dialog.querySelector('.pruzkum-download');
   let current=null,page=0,previousFocus=null;
-  function src(doc,i,small){return `assets/pruzkum/${doc}/${small?'nahled/':''}s-${pad(i+1)}.jpg`;}
+  function src(doc,i,small){return `assets/pruzkum/${doc}/${small?'nahled/':''}s-${pad(i+1)}.jpg?v=2`;}
   function show(i){
     const d=docs[current];
     page=(i+d.pages)%d.pages;
