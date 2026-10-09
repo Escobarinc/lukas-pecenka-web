@@ -37,9 +37,9 @@
   lista.innerHTML=`<div class="cookie-inner">
     <div class="cookie-text">
       <strong>Soubory cookies</strong>
-      <p>Nezbytné cookies potřebuje web ke svému fungování. Analytické a marketingové cookies použijeme jen s Vaším souhlasem – pomáhají nám zjistit, jak web používáte, a zlepšovat ho. <a href="cookies.html">Více informací</a></p>
+      <p>Nezbytné cookies potřebuje web ke svému fungování. Analytické a marketingové cookies použijeme jen s vaším souhlasem – pomáhají nám zjistit, jak web používáte, a zlepšovat ho. <a href="cookies.html">Více informací</a></p>
       <div class="cookie-settings" hidden>
-        <label><input type="checkbox" checked disabled> <span><b>Nezbytné</b> – fungování webu, uložení Vaší volby</span></label>
+        <label><input type="checkbox" checked disabled> <span><b>Nezbytné</b> – fungování webu, uložení vaší volby</span></label>
         <label><input type="checkbox" data-cookie="analyticke"> <span><b>Analytické</b> – měření návštěvnosti (Google Analytics)</span></label>
         <label><input type="checkbox" data-cookie="marketingove"> <span><b>Marketingové</b> – měření reklamních kampaní (Google Ads)</span></label>
       </div>
