@@ -480,3 +480,10 @@ main p a:not(.btn):not([class]){text-decoration:underline;text-underline-offset:
 .spravce-upravy [contenteditable="true"]:hover{outline-style:solid}
 .spravce-upravy [contenteditable="true"]:focus{outline:2px solid #d0844a;background:rgba(208,132,74,.06)}
 
+/* Mapa průzkumů na mobilu: větší, posouvá se prstem do stran (přání Pečenky 6. 10.) */
+.ref-map-tip{display:none}
+@media (max-width:700px){
+  .ref-map-scroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;margin-inline:calc(50% - 50vw);padding:6px 16px 10px;scrollbar-width:thin}
+  .ref-map-scroll .ref-map{width:760px;max-width:none}
+  .ref-map-tip{display:block;margin:4px 0 0;font-size:13px;color:var(--muted);text-align:center}
+}

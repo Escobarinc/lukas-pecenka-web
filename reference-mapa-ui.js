@@ -33,6 +33,9 @@
     });
   });
 
+  // na mobilu (mapa širší než displej) začít uprostřed republiky
+  requestAnimationFrame(() => document.querySelectorAll('.ref-map-scroll').forEach(sc => { if (sc.scrollWidth > sc.clientWidth) sc.scrollLeft = (sc.scrollWidth - sc.clientWidth) * 0.42; }));
+
   document.querySelectorAll('.ref-map').forEach(box => {
     box.innerHTML = '<img class="ref-map-cz" src="assets/czechia-outline.svg?v=49" alt="Mapa České republiky s místy průzkumů"><div class="ref-tip" hidden></div>';
     const tip = box.querySelector('.ref-tip');
@@ -44,6 +47,10 @@
       tip.style.left = (r.left - R.left + r.width / 2) + 'px';
       tip.style.top = (r.top - R.top) + 'px';
       tip.classList.toggle('dole', r.top - R.top < 90);
+      // bublina se musí vejít na obrazovku (na mobilu je mapa širší než displej)
+      const T = tip.getBoundingClientRect(), okraj = 8;
+      const posun = T.left < okraj ? okraj - T.left : T.right > innerWidth - okraj ? innerWidth - okraj - T.right : 0;
+      if (posun) tip.style.left = (parseFloat(tip.style.left) + posun) + 'px';
     };
     [...D.body].sort((a, b) => b.pocet - a.pocet).forEach(b => {
       const [x, y] = pos(b.lat, b.lon);
