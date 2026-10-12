@@ -9,8 +9,13 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# Vždy HTTPS a bez www
-RewriteCond %{HTTPS} !=on [OR]
+# Ověřování SSL certifikátu (Let's Encrypt) musí projít bez přesměrování a blokace
+RewriteRule ^\.well-known/ - [L]
+
+# Vždy HTTPS a bez www (X-Forwarded-Proto = když je před serverem proxy, aby nevznikla smyčka)
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://lukaspecenka.cz%{REQUEST_URI} [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^ https://lukaspecenka.cz%{REQUEST_URI} [R=301,L]
 
